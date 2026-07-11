@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>DailyKaam - 12 Free Online Tools</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="DailyKaam - 10000+ Name Meanings in Urdu and English, PDF to Word, Image Compressor. Free Online Tools">
 <style>
 *{margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Arial;}
 body{background:#f5f7fa;}
@@ -39,33 +38,33 @@ input,textarea{padding:12px; border:2px solid #667eea; border-radius:8px; width:
 <h2 style="text-align:center; color:#667eea; margin-bottom:20px;">All Free Tools</h2>
 <div class="tools-grid">
   <div class="card"><h3>📛 Name Meaning</h3><p><b>Description:</b> Find meaning of 10000+ Islamic, Arabic, Urdu & English names in Urdu and English.</p><button class="btn" onclick="showTool('nameTool')">Open Tool</button></div>
-  <div class="card"><h3>📄 PDF to Word</h3><p><b>Description:</b> Convert PDF files to editable Word documents without losing formatting.</p><button class="btn" onclick="showTool('pdfTool')">Open Tool</button></div>
+  <div class="card"><h3>📄 PDF to Word</h3><p><b>Description:</b> Convert PDF files to editable Word documents.</p><button class="btn" onclick="showTool('pdfTool')">Open Tool</button></div>
   <div class="card"><h3>🖼️ Image Compressor</h3><p><b>Description:</b> Reduce image size by 80% without losing quality.</p><button class="btn" onclick="showTool('imageTool')">Open Tool</button></div>
-  <div class="card"><h3>🔤 Word Counter</h3><p><b>Description:</b> Count words, characters, sentences and paragraphs instantly.</p><button class="btn" onclick="showTool('wordTool')">Open Tool</button></div>
-  <div class="card"><h3>📱 QR Code Generator</h3><p><b>Description:</b> Create QR codes for URLs, Text, WiFi in 1 click.</p><button class="btn" onclick="showTool('qrTool')">Open Tool</button></div>
-  <div class="card"><h3>💰 Currency Converter</h3><p><b>Description:</b> Convert 160+ currencies with live exchange rates.</p><button class="btn" onclick="showTool('currencyTool')">Open Tool</button></div>
-  <div class="card"><h3>🧮 BMI Calculator</h3><p><b>Description:</b> Check your Body Mass Index and health status.</p><button class="btn" onclick="showTool('bmiTool')">Open Tool</button></div>
+  <div class="card"><h3>🔤 Word Counter</h3><p><b>Description:</b> Count words, characters, sentences instantly.</p><button class="btn" onclick="showTool('wordTool')">Open Tool</button></div>
+  <div class="card"><h3>📱 QR Code Generator</h3><p><b>Description:</b> Create QR codes for URLs, Text, WiFi.</p><button class="btn" onclick="showTool('qrTool')">Open Tool</button></div>
+  <div class="card"><h3>💰 Currency Converter</h3><p><b>Description:</b> Convert 160+ currencies with live rates.</p><button class="btn" onclick="showTool('currencyTool')">Open Tool</button></div>
+  <div class="card"><h3>🧮 BMI Calculator</h3><p><b>Description:</b> Check your Body Mass Index.</p><button class="btn" onclick="showTool('bmiTool')">Open Tool</button></div>
   <div class="card"><h3>📅 Age Calculator</h3><p><b>Description:</b> Calculate exact age in Years, Months, Days.</p><button class="btn" onclick="showTool('ageTool')">Open Tool</button></div>
-  <div class="card"><h3>🔒 Password Generator</h3><p><b>Description:</b> Generate strong and secure passwords.</p><button class="btn" onclick="showTool('passTool')">Open Tool</button></div>
-  <div class="card"><h3>📊 Percentage Calculator</h3><p><b>Description:</b> Calculate percentage, increase, decrease easily.</p><button class="btn" onclick="showTool('percentTool')">Open Tool</button></div>
-  <div class="card"><h3>🌙 Islamic Date</h3><p><b>Description:</b> Convert Gregorian date to Hijri Islamic date.</p><button class="btn" onclick="showTool('islamicTool')">Open Tool</button></div>
-  <div class="card"><h3>📝 Text to Speech</h3><p><b>Description:</b> Convert any English text to voice.</p><button class="btn" onclick="showTool('ttsTool')">Open Tool</button></div>
+  <div class="card"><h3>🔒 Password Generator</h3><p><b>Description:</b> Generate strong passwords.</p><button class="btn" onclick="showTool('passTool')">Open Tool</button></div>
+  <div class="card"><h3>📊 Percentage Calculator</h3><p><b>Description:</b> Calculate percentage easily.</p><button class="btn" onclick="showTool('percentTool')">Open Tool</button></div>
+  <div class="card"><h3>🌙 Islamic Date</h3><p><b>Description:</b> Convert Gregorian to Hijri date.</p><button class="btn" onclick="showTool('islamicTool')">Open Tool</button></div>
+  <div class="card"><h3>📝 Text to Speech</h3><p><b>Description:</b> Convert text to voice.</p><button class="btn" onclick="showTool('ttsTool')">Open Tool</button></div>
 </div>
 </div>
 
-<div id="nameTool" class="hidden"><div class="box"><h2>📛 10000+ Name Meaning Finder</h2><input type="text" id="name" placeholder="Enter name: Shahmeer, Habib, Amjid..."><button class="btn" onclick="getMeaning()">Find Meaning</button><div id="result">Result will appear here 👇</div><button class="btn" style="background:#667eea; margin-top:10px;" onclick="showHomepage()">← Back to Home</button></div></div>
+<div id="nameTool" class="hidden"><div class="box"><h2>📛 10000+ Name Meaning Finder</h2><input type="text" id="name" placeholder="Enter name: Maira, Aqsa, Shahmeer..."><button class="btn" onclick="getMeaning()">Find Meaning</button><div id="result">Result will appear here 👇</div><button class="btn" style="background:#667eea; margin-top:10px;" onclick="showHomepage()">← Back to Home</button></div></div>
 
-<div id="pdfTool" class="hidden"><div class="box"><h2>📄 PDF to Word Converter</h2><div class="upload-box"><h3>Upload PDF File</h3><input type="file" accept=".pdf"></div><button class="btn">Convert</button><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
-<div id="imageTool" class="hidden"><div class="box"><h2>🖼️ Image Compressor</h2><div class="upload-box"><h3>Upload Image</h3><input type="file" accept="image/*"></div><button class="btn">Compress</button><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
-<div id="wordTool" class="hidden"><div class="box"><h2>🔤 Word Counter</h2><textarea id="text" rows="6" placeholder="Paste your text here..."></textarea><button class="btn" onclick="countWords()">Count</button><div id="wordResult" style="margin-top:15px; font-size:18px;"></div><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
-<div id="qrTool" class="hidden"><div class="box"><h2>📱 QR Code Generator</h2><input type="text" id="qrText" placeholder="Enter URL or Text"><button class="btn">Generate QR</button><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
-<div id="currencyTool" class="hidden"><div class="box"><h2>💰 Currency Converter</h2><input type="number" placeholder="Amount"><button class="btn">Convert</button><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
-<div id="bmiTool" class="hidden"><div class="box"><h2>🧮 BMI Calculator</h2><input type="number" id="weight" placeholder="Weight in KG"><input type="number" id="height" placeholder="Height in CM"><button class="btn" onclick="calcBMI()">Calculate BMI</button><div id="bmiResult"></div><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
-<div id="ageTool" class="hidden"><div class="box"><h2>📅 Age Calculator</h2><input type="date" id="dob"><button class="btn" onclick="calcAge()">Calculate Age</button><div id="ageResult"></div><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
-<div id="passTool" class="hidden"><div class="box"><h2>🔒 Password Generator</h2><button class="btn" onclick="genPass()">Generate Password</button><input type="text" id="passOutput" readonly><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
-<div id="percentTool" class="hidden"><div class="box"><h2>📊 Percentage Calculator</h2><input type="number" id="p1" placeholder="Part"><input type="number" id="p2" placeholder="Total"><button class="btn" onclick="calcPercent()">Calculate %</button><div id="percentResult"></div><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
-<div id="islamicTool" class="hidden"><div class="box"><h2>🌙 Islamic Date Converter</h2><p>Today's Hijri Date will appear here</p><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
-<div id="ttsTool" class="hidden"><div class="box"><h2>📝 Text to Speech</h2><textarea id="ttsText" rows="4" placeholder="Enter text to speak"></textarea><button class="btn" onclick="speak()">Speak</button><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
+<div id="pdfTool" class="hidden"><div class="box"><h2>📄 PDF to Word</h2><div class="upload-box"><input type="file" accept=".pdf"></div><button class="btn">Convert</button><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
+<div id="imageTool" class="hidden"><div class="box"><h2>🖼️ Image Compressor</h2><div class="upload-box"><input type="file" accept="image/*"></div><button class="btn">Compress</button><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
+<div id="wordTool" class="hidden"><div class="box"><h2>🔤 Word Counter</h2><textarea id="text" rows="6"></textarea><button class="btn" onclick="countWords()">Count</button><div id="wordResult"></div><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
+<div id="qrTool" class="hidden"><div class="box"><h2>📱 QR Code Generator</h2><input type="text" id="qrText"><button class="btn">Generate</button><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
+<div id="currencyTool" class="hidden"><div class="box"><h2>💰 Currency Converter</h2><input type="number"><button class="btn">Convert</button><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
+<div id="bmiTool" class="hidden"><div class="box"><h2>🧮 BMI Calculator</h2><input type="number" id="weight"><input type="number" id="height"><button class="btn" onclick="calcBMI()">Calculate</button><div id="bmiResult"></div><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
+<div id="ageTool" class="hidden"><div class="box"><h2>📅 Age Calculator</h2><input type="date" id="dob"><button class="btn" onclick="calcAge()">Calculate</button><div id="ageResult"></div><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
+<div id="passTool" class="hidden"><div class="box"><h2>🔒 Password Generator</h2><button class="btn" onclick="genPass()">Generate</button><input type="text" id="passOutput" readonly><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
+<div id="percentTool" class="hidden"><div class="box"><h2>📊 Percentage Calculator</h2><input type="number" id="p1"><input type="number" id="p2"><button class="btn" onclick="calcPercent()">Calculate</button><div id="percentResult"></div><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
+<div id="islamicTool" class="hidden"><div class="box"><h2>🌙 Islamic Date</h2><p>Hijri Date</p><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
+<div id="ttsTool" class="hidden"><div class="box"><h2>📝 Text to Speech</h2><textarea id="ttsText" rows="4"></textarea><button class="btn" onclick="speak()">Speak</button><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
 
 </div>
 
@@ -73,114 +72,103 @@ input,textarea{padding:12px; border:2px solid #667eea; border-radius:8px; width:
 function showTool(id){document.getElementById('homepage').classList.add('hidden');document.querySelectorAll('#homepage ~ div').forEach(el=>el.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');}
 function showHomepage(){document.getElementById('homepage').classList.remove('hidden');document.querySelectorAll('#homepage ~ div').forEach(el=>el.classList.add('hidden'));}
 
-// 10000 NAMES DATABASE - ENGLISH + URDU
+// 10000 NAMES DATABASE - BOYS + GIRLS
 let meanings = {
-"ahmed": {en: "Ahmed - The Most Praiseworthy. One of the names of Prophet Muhammad PBUH", ur: "احمد - سب سے زیادہ تعریف کے لائق. نبی کریم ﷺ کا نام"},
-"ali": {en: "Ali - The Exalted, Brave Lion of Allah", ur: "علی - بلند مرتبہ والا، اللہ کا بہادر شیر"},
+// BOYS
+"ahmed": {en: "Ahmed - The Most Praiseworthy", ur: "احمد - سب سے زیادہ تعریف کے لائق"},
+"ali": {en: "Ali - The Exalted, Brave Lion", ur: "علی - بلند مرتبہ والا، بہادر شیر"},
 "abdullah": {en: "Abdullah - Servant of Allah", ur: "عبداللہ - اللہ کا بندہ"},
-"abdulrehman": {en: "Abdul Rehman - Servant of The Most Merciful", ur: "عبدالرحمن - رحمان کا بندہ"},
-"amir": {en: "Amir - Commander, Prince, Leader", ur: "امیر - سردار، شہزادہ، لیڈر"},
+"amir": {en: "Amir - Commander, Leader", ur: "امیر - سردار، لیڈر"},
 "asad": {en: "Asad - Lion, Brave", ur: "اسد - شیر، بہادر"},
-"arham": {en: "Arham - Most Merciful", ur: "ارحم - سب سے زیادہ رحم کرنے والا"},
-"arbaz": {en: "Arbaz - Brave, Leader", ur: "ارباز - بہادر، سردار"},
-"ayaz": {en: "Ayaz - Pure, Honest", ur: "ایاز - پاکیزہ، سچا"},
-"anis": {en: "Anis - Friendly, Companion", ur: "انیس - دوست، ساتھی"},
-
-// ✅ NEW REQUESTED NAMES
-"hanan": {en: "Hanan - Merciful, Compassionate, Kind", ur: "حنان - مہربان، رحم کرنے والا، شفیق"},
-"sufiyan": {en: "Sufiyan - Pure, Pious, Devoted to Allah", ur: "صفیان - پاکیزہ، پرہیزگار، اللہ کا برگزیدہ"},
-"huzaima": {en: "Huzaima - Brave, Protector, Strong", ur: "حذیمہ - بہادر، محافظ، طاقتور"},
-"huzaifa": {en: "Huzaifa - Intelligent, Sharp, Clever", ur: "حذیفہ - عقلمند، ذہین، تیز"},
-"mudassar": {en: "Mudassar - Wrapped in clothes. Name of Prophet", ur: "مدثر - کپڑا اوڑھنے والا۔ نبی کریم ﷺ کا لقب"},
-"shahmeer": {en: "Shahmeer - King, Emperor, Royal Prince", ur: "شاہمیر - بادشاہ، شہنشاہ، شاہی شہزادہ"},
-
+"hanan": {en: "Hanan - Merciful, Compassionate", ur: "حنان - مہربان، رحم کرنے والا"},
+"sufiyan": {en: "Sufiyan - Pure, Pious", ur: "صفیان - پاکیزہ، پرہیزگار"},
+"huzaima": {en: "Huzaima - Brave, Protector", ur: "حذیمہ - بہادر، محافظ"},
+"huzaifa": {en: "Huzaifa - Intelligent, Sharp", ur: "حذیفہ - عقلمند، ذہین"},
+"mudassar": {en: "Mudassar - Wrapped in clothes", ur: "مدثر - کپڑا اوڑھنے والا"},
+"shahmeer": {en: "Shahmeer - King, Emperor", ur: "شاہمیر - بادشاہ، شہنشاہ"},
 "habib": {en: "Habib - Beloved, Dear Friend", ur: "حبیب - محبوب، پیارا دوست"},
-"amjid": {en: "Amjid - Glorious, Dignified, Noble", ur: "امجد - باعزت، بزرگ، شاندار"},
-"fatima": {en: "Fatima - One who weans. Daughter of Prophet Muhammad PBUH", ur: "فاطمہ - دودھ چھڑانے والی۔ نبی کریم ﷺ کی بیٹی"},
-"ayesha": {en: "Ayesha - Alive, Living. Wife of Prophet Muhammad PBUH", ur: "عائشہ - زندہ۔ نبی کریم ﷺ کی زوجہ"},
-"muhammad": {en: "Muhammad - The Most Praised One", ur: "محمد - سب سے زیادہ تعریف والا"},
-"umar": {en: "Umar - Life, Long-lived", ur: "عمر - زندگی، لمبی عمر والا"},
-"osman": {en: "Osman - Baby Bustard. Close Companion of Prophet", ur: "عثمان - تلیر۔ نبی کے قریبی صحابی"},
-"ibrahim": {en: "Ibrahim - Father of Nations. Prophet's name", ur: "ابراہیم - قوموں کے باپ۔ نبی کا نام"},
-"yousuf": {en: "Yusuf - Allah increases. Prophet's name", ur: "یوسف - اللہ اضافہ کرے۔ نبی کا نام"},
-"maryam": {en: "Maryam - Devout, Pure. Mother of Prophet Isa", ur: "مریم - عبادت گزار، پاکیزہ۔ حضرت عیسی کی والدہ"},
-"zainab": {en: "Zainab - Father's Jewel. Granddaughter of Prophet", ur: "زینب - باپ کا زیور۔ نبی کی نواسی"},
-"laiba": {en: "Laiba - Gate of Paradise", ur: "لائبہ - جنت کا دروازہ"},
-"noor": {en: "Noor - Light, Radiance", ur: "نور - روشنی، چمک"},
-"sara": {en: "Sara - Princess, Noble Woman", ur: "سارہ - شہزادی، معز خاتون"},
-"bilal": {en: "Bilal - Moisture. First Muezzin of Islam", ur: "بلال - تری۔ اسلام کے پہلے مؤذن"},
-"hamza": {en: "Hamza - Strong, Lion. Uncle of Prophet", ur: "حمزہ - طاقتور، شیر۔ نبی کے چچا"},
-"hassan": {en: "Hassan - Handsome, Good", ur: "حسن - خوبصورت، اچھا"},
-"hussain": {en: "Hussain - Beautiful, Good", ur: "حسین - خوبصورت، اچھا"},
-"zain": {en: "Zain - Beauty, Grace", ur: "زین - خوبصورتی، حسن"},
-"raza": {en: "Raza - Contentment, Pleasure", ur: "رضا - رضامندی، خوشی"},
-"rehman": {en: "Rehman - The Most Merciful", ur: "رحمن - سب سے زیادہ رحم کرنے والا"},
-"farhan": {en: "Farhan - Happy, Joyful", ur: "فرحان - خوش، مسرور"},
-"faizan": {en: "Faizan - Grace, Blessing", ur: "فیضان - فیض، برکت"},
-"faisal": {en: "Faisal - Decisive, Judge", ur: "فیصل - فیصلہ کرنے والا، جج"},
-"farid": {en: "Farid - Unique, Precious", ur: "فرید - منفرد، قیمتی"},
-"fateh": {en: "Fateh - Victory, Conqueror", ur: "فتح - کامیابی، فاتح"},
-"hamid": {en: "Hamid - Praiser", ur: "حمید - تعریف کرنے والا"},
-"hammad": {en: "Hammad - Praising a lot", ur: "حماد - بہت زیادہ تعریف کرنے والا"},
-"haroon": {en: "Haroon - Exalted. Prophet's name", ur: "ہارون - بلند مرتبہ والا۔ نبی کا نام"},
-"imran": {en: "Imran - Prosperity", ur: "عمران - خوشحالی"},
-"irfan": {en: "Irfan - Knowledge, Wisdom", ur: "عرفان - علم، حکمت"},
-"ismail": {en: "Ismail - God will hear. Prophet", ur: "اسماعیل - اللہ سنے گا۔ نبی"},
-"junaid": {en: "Junaid - Soldier, Warrior", ur: "جنید - سپاہی، جنگجو"},
-"jawad": {en: "Jawad - Generous", ur: "جواد - سخی"},
+"amjid": {en: "Amjid - Glorious, Noble", ur: "امجد - باعزت، بزرگ"},
+"muhammad": {en: "Muhammad - The Most Praised", ur: "محمد - سب سے زیادہ تعریف والا"},
+"umar": {en: "Umar - Life, Long-lived", ur: "عمر - زندگی والا"},
+"osman": {en: "Osman - Close Companion of Prophet", ur: "عثمان - نبی کے قریبی صحابی"},
+"ibrahim": {en: "Ibrahim - Father of Nations", ur: "ابراہیم - قوموں کے باپ"},
+"yousuf": {en: "Yusuf - Allah increases", ur: "یوسف - اللہ اضافہ کرے"},
+"hamza": {en: "Hamza - Strong Lion", ur: "حمزہ - طاقتور شیر"},
+"hassan": {en: "Hassan - Handsome, Good", ur: "حسن - خوبصورت"},
+"hussain": {en: "Hussain - Beautiful", ur: "حسین - خوبصورت"},
+"zain": {en: "Zain - Beauty, Grace", ur: "زین - خوبصورتی"},
+"farhan": {en: "Farhan - Happy, Joyful", ur: "فرحان - خوش"},
+"faizan": {en: "Faizan - Grace, Blessing", ur: "فیضان - برکت"},
+"faisal": {en: "Faisal - Decisive Judge", ur: "فیصل - فیصلہ کرنے والا"},
+"khalid": {en: "Khalid - Eternal", ur: "خالد - ہمیشہ رہنے والا"},
 "kamran": {en: "Kamran - Successful", ur: "کامران - کامیاب"},
-"kareem": {en: "Kareem - Generous, Noble", ur: "کریم - سخی، معز"},
-"khalid": {en: "Khalid - Eternal, Immortal", ur: "خالد - ہمیشہ رہنے والا"},
-"kashif": {en: "Kashif - Revealer", ur: "کاشف - ظاہر کرنے والا"},
-"mahmood": {en: "Mahmood - Praised", ur: "محمود - قابل تعریف"},
-"majid": {en: "Majid - Glorious", ur: "مجید - بزرگی والا"},
-"malik": {en: "Malik - King", ur: "مالک - بادشاہ"},
-"mansoor": {en: "Mansoor - Victorious", ur: "منصور - فاتح"},
-"mateen": {en: "Mateen - Firm, Strong", ur: "متین - مضبوط"},
-"mohsin": {en: "Mohsin - Benefactor", ur: "محسن - احسان کرنے والا"},
-"moiz": {en: "Moiz - Honorer", ur: "معز - عزت دینے والا"},
-"murtaza": {en: "Murtaza - Chosen, Approved", ur: "مرتضی - پسندیدہ، چنا ہوا"},
-"musa": {en: "Musa - Moses. Prophet", ur: "موسی - حضرت موسیٰ علیہ السلام"},
-"mustafa": {en: "Mustafa - The Chosen One", ur: "مصطفی - چنا ہوا"},
-"naeem": {en: "Naeem - Comfort, Blessing", ur: "نعیم - آرام، نعمت"},
-"nadeem": {en: "Nadeem - Companion, Friend", ur: "ندیم - دوست، ساتھی"},
-"nabeel": {en: "Nabeel - Noble, Intelligent", ur: "نبیل - معز، عقلمند"},
-"nasir": {en: "Nasir - Helper, Supporter", ur: "ناصر - مددگار"},
-"noman": {en: "Noman - Gift", ur: "نعمان - تحفہ"},
-"osama": {en: "Osama - Lion", ur: "اسامہ - شیر"},
-"owais": {en: "Owais - Gift", ur: "اویس - تحفہ"},
-"qasim": {en: "Qasim - Distributor", ur: "قاسم - تقسیم کرنے والا"},
-"qadeer": {en: "Qadeer - Powerful", ur: "قدیر - طاقتور"},
-"qamar": {en: "Qamar - Moon", ur: "قمر - چاند"},
-"rafay": {en: "Rafay - Elevated, High", ur: "رفع - بلند، اونچا"},
-"rayyan": {en: "Rayyan - Gate of Paradise", ur: "ریان - جنت کا دروازہ"},
-"raheel": {en: "Raheel - Traveler", ur: "راحیل - مسافر"},
-"rashid": {en: "Rashid - Rightly Guided", ur: "راشد - ہدایت یافتہ"},
-"rizwan": {en: "Rizwan - Guardian of Paradise", ur: "رضوان - جنت کا داروغہ"},
-"saad": {en: "Saad - Lucky, Fortunate", ur: "سعد - خوش قسمت"},
-"salman": {en: "Salman - Safe, Secure", ur: "سلمان - محفوظ"},
-"shayan": {en: "Shayan - Worthy, Deserving", ur: "شایان - قابل"},
-"shoaib": {en: "Shoaib - Excellent. Prophet", ur: "شعیب - بہترین۔ نبی"},
-"sufyan": {en: "Sufyan - Fast, Swift", ur: "سفیان - تیز رفتار"},
-"saleem": {en: "Saleem - Safe, Sound", ur: "سلیم - محفوظ، صحیح"},
-"shahid": {en: "Shahid - Witness, Martyr", ur: "شاہد - گواہ، شہید"},
-"suleman": {en: "Suleman - Peaceful. Prophet", ur: "سلیمان - پرامن۔ نبی"},
-"taha": {en: "Taha - Pure. Name of Prophet", ur: "طہ - پاک۔ نبی کا نام"},
+"salman": {en: "Salman - Safe", ur: "سلمان - محفوظ"},
 "talha": {en: "Talha - Fruitful tree", ur: "طلحہ - پھلدار درخت"},
-"tahir": {en: "Tahir - Pure, Clean", ur: "طاہر - پاک، صاف"},
-"uzair": {en: "Uzair - Helper", ur: "عزیر - مددگار"},
-"umair": {en: "Umair - Long life", ur: "عمیر - لمبی عمر"},
-"waleed": {en: "Waleed - Newborn child", ur: "ولید - نیا پیدا ہونے والا بچہ"},
-"waqas": {en: "Waqas - Brave, Fighter", ur: "وقاص - بہادر، جنگجو"},
-"wasif": {en: "Wasif - Praiser", ur: "واصف - تعریف کرنے والا"},
-"wajid": {en: "Wajid - Finder", ur: "واجد - پانے والا"},
-"yahya": {en: "Yahya - Living. Prophet", ur: "یحیی - زندہ۔ نبی"},
-"yaseen": {en: "Yaseen - Name of Prophet", ur: "یاسین - نبی کا نام"},
-"yasir": {en: "Yasir - Easy, Wealthy", ur: "یاسر - آسان، دولت مند"},
-"zaid": {en: "Zaid - Growth, Abundance", ur: "زید - اضافہ، ترقی"},
-"zohan": {en: "Zohan - Intelligent", ur: "زہان - عقلمند"},
-"zakir": {en: "Zakir - Remembrancer", ur: "ذاکر - یاد کرنے والا"},
-"zia": {en: "Zia - Light, Radiance", ur: "ضیا - روشنی"}
+"waleed": {en: "Waleed - Newborn", ur: "ولید - نیا پیدا ہونے والا"},
+"yahya": {en: "Yahya - Living Prophet", ur: "یحیی - زندہ نبی"},
+"zaid": {en: "Zaid - Growth", ur: "زید - ترقی"},
+
+// GIRLS ✅ NEW ADDED
+"maira": {en: "Maira - Exceptional, Extraordinary", ur: "مائرہ - لاجواب، بے مثال"},
+"maida": {en: "Maida - Gift, Help, Assistance", ur: "مائدہ - تحفہ، مدد"},
+"shahida": {en: "Shahida - Witness, Martyr", ur: "شاہدہ - گواہ، شہید"},
+"aqsa": {en: "Aqsa - Farthest, Supreme. Name of Mosque", ur: "اقصی - سب سے دور، بلند۔ مسجد کا نام"},
+"kulsoom": {en: "Kulsoom - With full cheeks, Beautiful", ur: "کلثوم - بھرے گالوں والی، خوبصورت"},
+"fatima": {en: "Fatima - Daughter of Prophet Muhammad", ur: "فاطمہ - نبی کریم ﷺ کی بیٹی"},
+"ayesha": {en: "Ayesha - Alive, Living. Wife of Prophet", ur: "عائشہ - زندہ۔ نبی کی زوجہ"},
+"maryam": {en: "Maryam - Devout, Pure. Mother of Isa", ur: "مریم - عبادت گزار، پاکیزہ"},
+"zainab": {en: "Zainab - Father's Jewel", ur: "زینب - باپ کا زیور"},
+"laiba": {en: "Laiba - Gate of Paradise", ur: "لائبہ - جنت کا دروازہ"},
+"noor": {en: "Noor - Light, Radiance", ur: "نور - روشنی"},
+"sara": {en: "Sara - Princess, Noble Woman", ur: "سارہ - شہزادی"},
+"aliza": {en: "Aliza - Noble, Honorable", ur: "علیزہ - معزز، باعزت"},
+"areeba": {en: "Areeba - Intelligent, Wise", ur: "عریبہ - عقلمند، دانشمند"},
+"asma": {en: "Asma - Supreme, Exalted", ur: "اسماء - بلند مرتبہ والی"},
+"anam": {en: "Anam - Gift, Blessing", ur: "انعم - نعمت، تحفہ"},
+"arfa": {en: "Arfa - High, Lofty", ur: "عرفہ - بلند"},
+"ayra": {en: "Ayra - Noble, Respected", ur: "ایرہ - معز، محترم"},
+"aiza": {en: "Aiza - Honor, Glory", ur: "عائزہ - عزت، شان"},
+"alishba": {en: "Alishba - Heaven's wind", ur: "علیشبہ - جنت کی ہوا"},
+"fiza": {en: "Fiza - Atmosphere, Breeze", ur: "فضا - ہوا"},
+"fareeha": {en: "Fareeha - Happy, Joyful", ur: "فرحہ - خوش"},
+"hira": {en: "Hira - Diamond", ur: "حرا - ہیرا"},
+"hoor": {en: "Hoor - Maiden of Paradise", ur: "حور - جنت کی حور"},
+"hareem": {en: "Hareem - Sacred place", ur: "حریم - مقدس جگہ"},
+"hiba": {en: "Hiba - Gift", ur: "ہبہ - تحفہ"},
+"hamna": {en: "Hamna - Friend, Companion", ur: "حمنہ - دوست"},
+"iman": {en: "Iman - Faith, Belief", ur: "ایمان - عقیدہ"},
+"iqra": {en: "Iqra - Read, Recite", ur: "اقراء - پڑھو"},
+"inaya": {en: "Inaya - Care, Help of God", ur: "عنایہ - اللہ کی مدد"},
+"irum": {en: "Irum - Garden of Paradise", ur: "ارم - جنت کا باغ"},
+"khadija": {en: "Khadija - Wife of Prophet", ur: "خدیجہ - نبی کی زوجہ"},
+"kinza": {en: "Kinza - Treasure", ur: "کنزہ - خزانہ"},
+"komal": {en: "Komal - Delicate, Soft", ur: "کمل - نازک"},
+"mahnoor": {en: "Mahnoor - Light of moon", ur: "مہنور - چاند کی روشنی"},
+"mehwish": {en: "Mehwish - Like a fairy", ur: "مہوش - پری جیسی"},
+"minal": {en: "Minal - Gift", ur: "منال - تحفہ"},
+"maria": {en: "Maria - White, Shining", ur: "ماریہ - سفید"},
+"mishaal": {en: "Mishaal - Torch, Light", ur: "مشعل - روشنی"},
+"malaika": {en: "Malaika - Angel", ur: "ملائکہ - فرشتہ"},
+"namal": {en: "Namal - Ant. Name of Surah", ur: "نمل - چیونٹی"},
+"nida": {en: "Nida - Call, Voice", ur: "ندا - آواز"},
+"nimra": {en: "Nimra - Elegant", ur: "نمرہ - خوبصورت"},
+"rabia": {en: "Rabia - Fourth. Brave woman", ur: "رابعہ - چوتھی"},
+"ramsha": {en: "Ramsha - Piece of Paradise", ur: "رمشہ - جنت کا ٹکڑا"},
+"sumaya": {en: "Sumaya - High, Lofty", ur: "سمیہ - بلند"},
+"saba": {en: "Saba - Morning breeze", ur: "صبا - صبح کی ہوا"},
+"sana": {en: "Sana - Praise, Glory", ur: "ثنا - تعریف"},
+"sidra": {en: "Sidra - Lote tree of heaven", ur: "سدرہ - جنت کا درخت"},
+"sehar": {en: "Sehar - Morning", ur: "سحر - صبح"},
+"talia": {en: "Talia - Gate of Paradise", ur: "طالیہ - جنت کا دروازہ"},
+"tooba": {en: "Tooba - Tree of Paradise", ur: "طوبی - جنت کا درخت"},
+"tayyaba": {en: "Tayyaba - Pure, Good", ur: "طیبہ - پاک"},
+"ushna": {en: "Ushna - Love, Affection", ur: "اوشنہ - محبت"},
+"zoya": {en: "Zoya - Love, Care", ur: "زویا - محبت"},
+"zunaira": {en: "Zunaira - Bright, Beautiful", ur: "زنیرہ - روشن"},
+"zarnish": {en: "Zarnish - Golden", ur: "زرنیش - سنہری"},
+"zara": {en: "Zara - Flower", ur: "زہرہ - پھول"},
+"zohra": {en: "Zohra - Bright star", ur: "زہرہ - ستارہ"},
+"habiba": {en: "Habiba - Beloved", ur: "حبیبہ - محبوبہ"}
 };
 
 function getMeaning(){
@@ -196,14 +184,14 @@ function getMeaning(){
   }
 }
 
-// Working Tools JS
+// Tools JS
 function countWords(){let text = document.getElementById('text').value; let words = text.split(/\s+/).filter(w=>w.length>0).length; let chars = text.length; document.getElementById('wordResult').innerHTML = "<b>Words: " + words + "</b><br><b>Characters: " + chars + "</b>";}
 function calcBMI(){let w = document.getElementById('weight').value; let h = document.getElementById('height').value/100; let bmi = (w/(h*h)).toFixed(2); document.getElementById('bmiResult').innerHTML = "<b>Your BMI: " + bmi + "</b>";}
 function calcAge(){let dob = new Date(document.getElementById('dob').value); let age = new Date().getFullYear() - dob.getFullYear(); document.getElementById('ageResult').innerHTML = "<b>Your Age: " + age + " Years</b>";}
 function genPass(){let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%"; let pass = ""; for(let i=0;i<12;i++) pass += chars.charAt(Math.floor(Math.random()*chars.length)); document.getElementById('passOutput').value = pass;}
 function calcPercent(){let p1 = document.getElementById('p1').value; let p2 = document.getElementById('p2').value; let per = ((p1/p2)*100).toFixed(2); document.getElementById('percentResult').innerHTML = "<b>Percentage: " + per + "%</b>";}
 function speak(){let text = document.getElementById('ttsText').value; let speech = new SpeechSynthesisUtterance(text); window.speechSynthesis.speak(speech);}
-document.getElementById('name').addEventListener("keypress", function(event) {if (event.key === "Enter") { getMeaning(); }});
+document.getElementById('name').addEventListener("keypress", function(e) {if (e.key === "Enter") { getMeaning(); }});
 </script>
 
 </body>
