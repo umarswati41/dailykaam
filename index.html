@@ -89,3 +89,33 @@ async function translateText(){
     let translated = data[0].map(item => item[0]).join("");
     document.getElementById("translateResult").innerText = translated;
 }
+// PHOTO EDITOR SCRIPT
+let uploadedImage = document.getElementById("uploadedImage");
+let downloadBtn = document.getElementById("downloadBtn");
+
+document.getElementById("imageUpload").addEventListener("change", function(e){
+    let file = e.target.files[0];
+    if(file){
+        let reader = new FileReader();
+        reader.onload = function(event){
+            uploadedImage.src = event.target.result;
+            uploadedImage.style.display = "block";
+            uploadedImage.style.filter = "none";
+            downloadBtn.style.display = "inline-block";
+            downloadBtn.href = event.target.result;
+        }
+        reader.readAsDataURL(file);
+    }
+});
+
+function applyFilter(filter){
+    uploadedImage.style.filter = filter;
+    // update download link with filter
+    let canvas = document.createElement('canvas');
+    let ctx = canvas.getContext('2d');
+    canvas.width = uploadedImage.naturalWidth;
+    canvas.height = uploadedImage.naturalHeight;
+    ctx.filter = filter;
+    ctx.drawImage(uploadedImage, 0, 0);
+    downloadBtn.href = canvas.toDataURL();
+}
