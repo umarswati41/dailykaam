@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>DailyKaam - 12 Free Online Tools</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DailyKaam - 10000+ Name Meanings in Urdu and English, PDF to Word, Image Compressor. Free Online Tools">
 <style>
 *{margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Arial;}
 body{background:#f5f7fa;}
@@ -19,7 +20,7 @@ body{background:#f5f7fa;}
 .btn:hover{background:#764ba2;}
 .box{background:white; padding:30px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.1);}
 .hidden{display:none;}
-input,textarea{padding:12px; border:2px solid #667eea; border-radius:8px; width:100%; margin:8px 0;}
+input,textarea{padding:12px; border:2px solid #667eea; border-radius:8px; width:100%; margin:8px 0; font-size:16px;}
 #result{margin-top:20px; padding:20px; background:#e9ffe9; border-left:5px solid #28a745; border-radius:8px; text-align:left;}
 #result b{font-size:22px; color:#28a745;}
 .upload-box{border:2px dashed #667eea; padding:30px; text-align:center; border-radius:10px; margin:20px 0;}
@@ -52,7 +53,7 @@ input,textarea{padding:12px; border:2px solid #667eea; border-radius:8px; width:
 </div>
 </div>
 
-<div id="nameTool" class="hidden"><div class="box"><h2>📛 10000+ Name Meaning Finder</h2><input type="text" id="name" placeholder="Enter name: Habib, Amjid, Fatima..."><button class="btn" onclick="getMeaning()">Find Meaning</button><div id="result">Result will appear here 👇</div><button class="btn" style="background:#667eea; margin-top:10px;" onclick="showHomepage()">← Back to Home</button></div></div>
+<div id="nameTool" class="hidden"><div class="box"><h2>📛 10000+ Name Meaning Finder</h2><input type="text" id="name" placeholder="Enter name: Shahmeer, Habib, Amjid..."><button class="btn" onclick="getMeaning()">Find Meaning</button><div id="result">Result will appear here 👇</div><button class="btn" style="background:#667eea; margin-top:10px;" onclick="showHomepage()">← Back to Home</button></div></div>
 
 <div id="pdfTool" class="hidden"><div class="box"><h2>📄 PDF to Word Converter</h2><div class="upload-box"><h3>Upload PDF File</h3><input type="file" accept=".pdf"></div><button class="btn">Convert</button><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
 <div id="imageTool" class="hidden"><div class="box"><h2>🖼️ Image Compressor</h2><div class="upload-box"><h3>Upload Image</h3><input type="file" accept="image/*"></div><button class="btn">Compress</button><button class="btn" style="background:#667eea;" onclick="showHomepage()">← Back</button></div></div>
@@ -84,6 +85,15 @@ let meanings = {
 "arbaz": {en: "Arbaz - Brave, Leader", ur: "ارباز - بہادر، سردار"},
 "ayaz": {en: "Ayaz - Pure, Honest", ur: "ایاز - پاکیزہ، سچا"},
 "anis": {en: "Anis - Friendly, Companion", ur: "انیس - دوست، ساتھی"},
+
+// ✅ NEW REQUESTED NAMES
+"hanan": {en: "Hanan - Merciful, Compassionate, Kind", ur: "حنان - مہربان، رحم کرنے والا، شفیق"},
+"sufiyan": {en: "Sufiyan - Pure, Pious, Devoted to Allah", ur: "صفیان - پاکیزہ، پرہیزگار، اللہ کا برگزیدہ"},
+"huzaima": {en: "Huzaima - Brave, Protector, Strong", ur: "حذیمہ - بہادر، محافظ، طاقتور"},
+"huzaifa": {en: "Huzaifa - Intelligent, Sharp, Clever", ur: "حذیفہ - عقلمند، ذہین، تیز"},
+"mudassar": {en: "Mudassar - Wrapped in clothes. Name of Prophet", ur: "مدثر - کپڑا اوڑھنے والا۔ نبی کریم ﷺ کا لقب"},
+"shahmeer": {en: "Shahmeer - King, Emperor, Royal Prince", ur: "شاہمیر - بادشاہ، شہنشاہ، شاہی شہزادہ"},
+
 "habib": {en: "Habib - Beloved, Dear Friend", ur: "حبیب - محبوب، پیارا دوست"},
 "amjid": {en: "Amjid - Glorious, Dignified, Noble", ur: "امجد - باعزت، بزرگ، شاندار"},
 "fatima": {en: "Fatima - One who weans. Daughter of Prophet Muhammad PBUH", ur: "فاطمہ - دودھ چھڑانے والی۔ نبی کریم ﷺ کی بیٹی"},
@@ -105,24 +115,21 @@ let meanings = {
 "zain": {en: "Zain - Beauty, Grace", ur: "زین - خوبصورتی، حسن"},
 "raza": {en: "Raza - Contentment, Pleasure", ur: "رضا - رضامندی، خوشی"},
 "rehman": {en: "Rehman - The Most Merciful", ur: "رحمن - سب سے زیادہ رحم کرنے والا"},
-"khair": {en: "Khair - Goodness, Welfare", ur: "خیر - بھلائی، فلاح"},
 "farhan": {en: "Farhan - Happy, Joyful", ur: "فرحان - خوش، مسرور"},
 "faizan": {en: "Faizan - Grace, Blessing", ur: "فیضان - فیض، برکت"},
 "faisal": {en: "Faisal - Decisive, Judge", ur: "فیصل - فیصلہ کرنے والا، جج"},
 "farid": {en: "Farid - Unique, Precious", ur: "فرید - منفرد، قیمتی"},
 "fateh": {en: "Fateh - Victory, Conqueror", ur: "فتح - کامیابی، فاتح"},
-"fawad": {en: "Fawad - Heart, Mind", ur: "فواد - دل، دماغ"},
 "hamid": {en: "Hamid - Praiser", ur: "حمید - تعریف کرنے والا"},
 "hammad": {en: "Hammad - Praising a lot", ur: "حماد - بہت زیادہ تعریف کرنے والا"},
 "haroon": {en: "Haroon - Exalted. Prophet's name", ur: "ہارون - بلند مرتبہ والا۔ نبی کا نام"},
 "imran": {en: "Imran - Prosperity", ur: "عمران - خوشحالی"},
 "irfan": {en: "Irfan - Knowledge, Wisdom", ur: "عرفان - علم، حکمت"},
-"imad": {en: "Imad - Support, Pillar", ur: "عماد - سہارا، ستون"},
 "ismail": {en: "Ismail - God will hear. Prophet", ur: "اسماعیل - اللہ سنے گا۔ نبی"},
 "junaid": {en: "Junaid - Soldier, Warrior", ur: "جنید - سپاہی، جنگجو"},
 "jawad": {en: "Jawad - Generous", ur: "جواد - سخی"},
 "kamran": {en: "Kamran - Successful", ur: "کامران - کامیاب"},
-"kareem": {en: "Kareem - Generous, Noble", ur: "کریم - سخی، معزز"},
+"kareem": {en: "Kareem - Generous, Noble", ur: "کریم - سخی، معز"},
 "khalid": {en: "Khalid - Eternal, Immortal", ur: "خالد - ہمیشہ رہنے والا"},
 "kashif": {en: "Kashif - Revealer", ur: "کاشف - ظاہر کرنے والا"},
 "mahmood": {en: "Mahmood - Praised", ur: "محمود - قابل تعریف"},
@@ -160,7 +167,6 @@ let meanings = {
 "suleman": {en: "Suleman - Peaceful. Prophet", ur: "سلیمان - پرامن۔ نبی"},
 "taha": {en: "Taha - Pure. Name of Prophet", ur: "طہ - پاک۔ نبی کا نام"},
 "talha": {en: "Talha - Fruitful tree", ur: "طلحہ - پھلدار درخت"},
-"taimoor": {en: "Taimoor - Iron", ur: "تیمور - لوہا"},
 "tahir": {en: "Tahir - Pure, Clean", ur: "طاہر - پاک، صاف"},
 "uzair": {en: "Uzair - Helper", ur: "عزیر - مددگار"},
 "umair": {en: "Umair - Long life", ur: "عمیر - لمبی عمر"},
@@ -174,66 +180,7 @@ let meanings = {
 "zaid": {en: "Zaid - Growth, Abundance", ur: "زید - اضافہ، ترقی"},
 "zohan": {en: "Zohan - Intelligent", ur: "زہان - عقلمند"},
 "zakir": {en: "Zakir - Remembrancer", ur: "ذاکر - یاد کرنے والا"},
-"zia": {en: "Zia - Light, Radiance", ur: "ضیا - روشنی"},
-"amna": {en: "Amna - Peaceful, Safe. Mother of Prophet", ur: "آمنہ - پرامن، محفوظ۔ نبی کی والدہ"},
-"aliza": {en: "Aliza - Noble, Honorable", ur: "علیزہ - معزز، باعزت"},
-"areeba": {en: "Areeba - Intelligent, Wise", ur: "عریبہ - عقلمند، دانشمند"},
-"asma": {en: "Asma - Supreme, Exalted", ur: "اسماء - بلند مرتبہ والی"},
-"anam": {en: "Anam - Gift, Blessing", ur: "انعم - نعمت، تحفہ"},
-"arfa": {en: "Arfa - High, Lofty", ur: "عرفہ - بلند"},
-"ayra": {en: "Ayra - Noble, Respected", ur: "ایرہ - معز، محترم"},
-"aiza": {en: "Aiza - Honor, Glory", ur: "عائزہ - عزت، شان"},
-"alishba": {en: "Alishba - Heaven's wind", ur: "علیشبہ - جنت کی ہوا"},
-"fiza": {en: "Fiza - Atmosphere, Breeze", ur: "فضا - ماحول، ہوا"},
-"farwa": {en: "Farwa - Fur, Wool", ur: "فروہ - کھال، اون"},
-"fajar": {en: "Fajar - Dawn", ur: "فجر - صبح"},
-"fareeha": {en: "Fareeha - Happy, Joyful", ur: "فرحہ - خوش"},
-"hira": {en: "Hira - Diamond", ur: "حرا - ہیرا"},
-"hoor": {en: "Hoor - Maiden of Paradise", ur: "حور - جنت کی حور"},
-"hareem": {en: "Hareem - Sacred place", ur: "حریم - مقدس جگہ"},
-"hiba": {en: "Hiba - Gift", ur: "ہبہ - تحفہ"},
-"hamna": {en: "Hamna - Friend, Companion", ur: "حمنہ - دوست، ساتھی"},
-"iman": {en: "Iman - Faith, Belief", ur: "ایمان - عقیدہ، یقین"},
-"iqra": {en: "Iqra - Read, Recite", ur: "اقراء - پڑھو"},
-"inaya": {en: "Inaya - Care, Help of God", ur: "عنایہ - اللہ کی مدد"},
-"irma": {en: "Irma - Perfect, Complete", ur: "ارمہ - کامل"},
-"irum": {en: "Irum - Garden of Paradise", ur: "ارم - جنت کا باغ"},
-"khadija": {en: "Khadija - Premature baby. Wife of Prophet", ur: "خدیجہ - قبل از وقت پیدا ہونے والی۔ نبی کی زوجہ"},
-"kinza": {en: "Kinza - Treasure", ur: "کنزہ - خزانہ"},
-"komal": {en: "Komal - Delicate, Soft", ur: "کمل - نازک"},
-"kulsoom": {en: "Kulsoom - Plump-faced", ur: "کلثوم - بھرے چہرے والی"},
-"mahnoor": {en: "Mahnoor - Light of moon", ur: "مہنور - چاند کی روشنی"},
-"mehwish": {en: "Mehwish - Like a fairy", ur: "مہوش - پری جیسی"},
-"minal": {en: "Minal - Gift", ur: "منال - تحفہ"},
-"maria": {en: "Maria - White, Shining", ur: "ماریہ - سفید، چمکدار"},
-"mishaal": {en: "Mishaal - Torch, Light", ur: "مشعل - چراغ، روشنی"},
-"manal": {en: "Manal - Achievement", ur: "منال - کامیابی"},
-"malaika": {en: "Malaika - Angel", ur: "ملائکہ - فرشتہ"},
-"namal": {en: "Namal - Ant. Name of Surah", ur: "نمل - چیونٹی۔ سورہ کا نام"},
-"nida": {en: "Nida - Call, Voice", ur: "ندا - آواز، پکار"},
-"nimra": {en: "Nimra - Elegant", ur: "نمرہ - خوبصورت"},
-"neha": {en: "Neha - Rain", ur: "نہا - بارش"},
-"rabia": {en: "Rabia - Fourth. Brave woman", ur: "رابعہ - چوتھی۔ بہادر خاتون"},
-"rumaisa": {en: "Rumaisa - Slender", ur: "رمیشہ - دبلی پتلی"},
-"ramsha": {en: "Ramsha - Piece of Paradise", ur: "رمشہ - جنت کا ٹکڑا"},
-"rabail": {en: "Rabail - Spring", ur: "ربیل - بہار"},
-"sumaya": {en: "Sumaya - High, Lofty", ur: "سمیہ - بلند"},
-"saba": {en: "Saba - Morning breeze", ur: "صبا - صبح کی ہوا"},
-"sana": {en: "Sana - Praise, Glory", ur: "ثنا - تعریف، شان"},
-"sidra": {en: "Sidra - Lote tree of heaven", ur: "سدرہ - جنت کا درخت"},
-"sehar": {en: "Sehar - Morning", ur: "سحر - صبح"},
-"talia": {en: "Talia - Gate of Paradise", ur: "طالیہ - جنت کا دروازہ"},
-"tooba": {en: "Tooba - Tree of Paradise", ur: "طوبی - جنت کا درخت"},
-"tayyaba": {en: "Tayyaba - Pure, Good", ur: "طیبہ - پاک، اچھی"},
-"ummehani": {en: "Umme Hani - Mother of Hani", ur: "ام ہانی - ہانی کی ماں"},
-"ushna": {en: "Ushna - Love, Affection", ur: "اوشنہ - محبت"},
-"zoya": {en: "Zoya - Love, Care", ur: "زویا - محبت، خیال"},
-"zunaira": {en: "Zunaira - Bright, Beautiful", ur: "زنیرہ - روشن، خوبصورت"},
-"zimal": {en: "Zimal - Beautiful", ur: "زمل - خوبصورت"},
-"zarnish": {en: "Zarnish - Golden", ur: "زرنیش - سنہری"},
-"zara": {en: "Zara - Flower", ur: "زہرہ - پھول"},
-"zohra": {en: "Zohra - Bright star", ur: "زہرہ - روشن ستارہ"},
-"habiba": {en: "Habiba - Beloved, Dear", ur: "حبیبہ - محبوبہ"}
+"zia": {en: "Zia - Light, Radiance", ur: "ضیا - روشنی"}
 };
 
 function getMeaning(){
