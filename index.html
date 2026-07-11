@@ -1,360 +1,323 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DailyKaam - All in One Tools</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            min-height: 100vh; padding: 20px; position: relative; overflow-x: hidden;
-        }
-        body::before {
-            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-            animation: moveStars 200s linear infinite; z-index: -1;
-        }
-        @keyframes moveStars { from { background-position: 0 0; } to { background-position: -10000px 5000px; } }
-
-  .container {
-            max-width: 600px; margin: 30px auto; background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px; padding: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-  .container:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4); }
-        h1 { color: white; text-align: center; margin-bottom: 10px; font-size: 45px; text-shadow: 0 0 15px #667eea; }
-  .subtitle { color: #ddd; text-align: center; margin-bottom: 40px; font-size: 18px; }
-        h2 { color: #667eea; text-align: center; margin-bottom: 8px; font-size: 24px; border-bottom: 3px solid #764ba2; padding-bottom: 10px; }
-  .tool-desc { background: #e8f0fe; padding: 15px; border-radius: 12px; margin-bottom: 20px; font-size: 14px; color: #333; line-height: 1.7; border-left: 4px solid #667eea; }
-  .tool-desc b { color: #764ba2; }
-        p { text-align: center; color: #555; margin-bottom: 20px; }
-  .input-box { display: flex; gap: 10px; margin-bottom: 20px; }
-        input, textarea, select {
-            flex: 1; padding: 14px; border: 2px solid #ddd; border-radius: 12px;
-            font-size: 16px; width: 100%; margin-bottom: 10px;
-            transition: border 0.3s;
-        }
-        input:focus, textarea:focus, select:focus { border: 2px solid #667eea; outline: none; }
-        button {
-            padding: 14px 24px; background: linear-gradient(90deg, #667eea, #764ba2);
-            color: white; border: none; border-radius: 12px; cursor: pointer;
-            font-size: 16px; margin: 5px; font-weight: bold;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
-            transition: all 0.3s;
-        }
-        button:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(102, 126, 234, 0.8); }
-        ul { list-style: none; }
-        li { background: #f8f9fa; padding: 12px; margin-bottom: 10px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; border-left: 4px solid #667eea; }
-  .delete { background: linear-gradient(90deg, #ff4757, #e84118); padding: 8px 12px; font-size: 14px; }
-  .divider { height: 2px; background: linear-gradient(90deg, transparent, #667eea, transparent); margin: 40px auto; width: 80%; border-radius: 2px; }
-        #generatedPass, #qrResult, #nameResult, #quoteResult { background:#e8f0fe; padding:20px; border-radius:10px; font-weight:bold; text-align:center; font-size:18px; font-style: italic; }
-        #qrResult img { max-width: 200px; margin-top: 10px; }
-        #nameResult { text-align:left; line-height: 1.8; font-style: normal; }
-  .special { border: 3px solid gold; box-shadow: 0 0 25px rgba(255, 215, 0, 0.6); }
-    </style>
+<meta charset="UTF-8">
+<title>DailyKaam - Free Online Tools</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DailyKaam - Free Online Tools. Name Meaning, PDF Tools, Image Tools sab 1 jagah">
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Arial;}
+body{background:#f5f7fa; color:#333;}
+.header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); color:white; padding:20px; text-align:center;}
+.header h1{font-size:32px;}
+.header p{font-size:14px; opacity:0.9;}
+.container{max-width:1000px; margin:30px auto; padding:20px;}
+.tools-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; margin-top:20px;}
+.card{background:white; padding:25px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:0.3s; cursor:pointer;}
+.card:hover{transform:translateY(-5px); box-shadow:0 8px 25px rgba(0,0,0,0.15);}
+.card h3{color:#667eea; margin-bottom:10px;}
+.card p{color:#666; font-size:14px; margin-bottom:15px;}
+.btn{display:inline-block; padding:10px 20px; background:#667eea; color:white; text-decoration:none; border-radius:8px; font-weight:bold;}
+.btn:hover{background:#764ba2;}
+.box{background:white; padding:30px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); margin-top:30px;}
+.search-box{display:flex; gap:10px; justify-content:center; margin:20px 0;}
+input{flex:1; padding:14px; border:2px solid #667eea; border-radius:10px; font-size:16px; outline:none;}
+button{padding:14px 30px; background:#28a745; color:white; border:none; border-radius:10px; cursor:pointer; font-size:16px; font-weight:bold;}
+button:hover{background:#218838;}
+#result{margin-top:20px; padding:25px; background:#e9ffe9; border-left:5px solid #28a745; border-radius:10px; text-align:left; font-size:18px; min-height:60px;}
+#result b{color:#28a745; font-size:22px; text-transform:capitalize;}
+.footer{text-align:center; padding:20px; color:#777; margin-top:40px;}
+.hidden{display:none;}
+</style>
 </head>
 <body>
-    <h1>DailyKaam ✨</h1>
-    <p class="subtitle">12 Free Tools - Everything in One Place</p>
 
-    <!-- 1. UNIQUE TOOL: MOOD QUOTE GENERATOR -->
-    <div class="container special">
-        <h2>1. AI Mood Quote Generator 🎯</h2>
-        <div class="tool-desc">
-            <b>What is this:</b> Get instant inspirational quotes based on your mood. <br>
-            <b>How it works:</b> Select your mood and click generate. Perfect for WhatsApp status, Instagram posts and daily motivation.
-        </div>
-        <select id="moodSelect">
-            <option value="">-- Select Your Mood --</option>
-            <option value="motivation">Motivation 💪</option>
-            <option value="happy">Happy 😊</option>
-            <option value="sad">Sad 😢</option>
-            <option value="love">Love ❤️</option>
-            <option value="success">Success 🏆</option>
-        </select>
-        <button onclick="generateQuote()">Generate Quote</button>
-        <div id="quoteResult" style="margin-top:15px;"></div>
-    </div>
+<div class="header">
+<h1>🚀 DailyKaam</h1>
+<p>Free Online Tools - Har Kaam 1 Minute Me</p>
+</div>
 
-    <div class="divider"></div>
+<div class="container">
 
-    <!-- 2. NAME MEANING TOOL -->
-    <div class="container">
-        <h2>2. Name Meaning + Lucky Number ✨</h2>
-        <div class="tool-desc">
-            <b>What is this:</b> Find your name meaning, lucky color and personality. <br>
-            <b>How it works:</b> Just type your name and click button. Perfect for sharing with friends and knowing fun facts about yourself.
-        </div>
-        <input type="text" id="nameInput" placeholder="Enter your name">
-        <button onclick="nameMeaning()">Reveal Secret</button>
-        <div id="nameResult" style="margin-top:15px;"></div>
-    </div>
+<!-- HOMEPAGE SECTION -->
+<div id="homepage">
+<h2 style="text-align:center; color:#667eea;">Hamare Free Tools</h2>
+<div class="tools-grid">
 
-    <div class="divider"></div>
+  <div class="card" onclick="showTool('nameTool')">
+    <h3>📛 Name Meaning Tool</h3>
+    <p>2000+ Islamic, Urdu, Arabic naam ki meaning jano 1 second me</p>
+    <span class="btn">Tool Kholo</span>
+  </div>
 
-    <!-- 3. TODO LIST -->
-    <div class="container">
-        <h2>3. To-Do List 📝</h2>
-        <div class="tool-desc">
-            <b>What is this:</b> A simple list to write your daily tasks. <br>
-            <b>How it works:</b> Type your work and click Add. Stay organized and never forget important work. Delete tasks when completed.
-        </div>
-        <div class="input-box">
-            <input type="text" id="taskInput" placeholder="Enter new task...">
-            <button onclick="addTask()">Add</button>
-        </div>
-        <ul id="taskList"></ul>
-    </div>
+  <div class="card">
+    <h3>📄 PDF to Word</h3>
+    <p>Jald hi aayega</p>
+    <span class="btn" style="background:#ccc;">Coming Soon</span>
+  </div>
 
-    <div class="divider"></div>
+  <div class="card">
+    <h3>🖼️ Image Compressor</h3>
+    <p>Jald hi aayega</p>
+    <span class="btn" style="background:#ccc;">Coming Soon</span>
+  </div>
 
-    <!-- 4. CALCULATOR -->
-    <div class="container">
-        <h2>4. Calculator 🧮</h2>
-        <div class="tool-desc">
-            <b>What is this:</b> A basic calculator for addition and subtraction. <br>
-            <b>How it works:</b> Enter two numbers and click Add or Minus. Quickly calculate bills, expenses or any math problems.
-        </div>
-        <input type="number" id="num1" placeholder="First number">
-        <input type="number" id="num2" placeholder="Second number">
-        <button onclick="add()">Add</button>
-        <button onclick="minus()">Minus</button>
-        <p id="result" style="margin-top:15px; font-size:20px; font-weight:bold; text-align:center;"></p>
-    </div>
+</div>
+</div>
 
-    <div class="divider"></div>
+<!-- NAME MEANING TOOL SECTION -->
+<div id="nameTool" class="hidden">
+<div class="box">
+<h2 style="text-align:center; color:#28a745;">📛 2000+ Name Meaning Checker</h2>
+<p style="text-align:center;">Islamic, Arabic, Urdu naam ki meaning</p>
+<div class="search-box">
+<input type="text" id="name" placeholder="Naam likho: Habib, Amjid, Ahmed...">
+<button onclick="getMeaning()">Meaning Dekho</button>
+</div>
+<div id="result">Yahan naam ki meaning show hogi 👇</div>
+<button onclick="showHomepage()" style="background:#667eea; margin-top:15px;">← Wapas Homepage</button>
+</div>
+</div>
 
-    <!-- 5. TRANSLATOR -->
-    <div class="container">
-        <h2>5. Language Translator 🌍</h2>
-        <div class="tool-desc">
-            <b>What is this:</b> Translate Urdu, Hindi, Arabic to English instantly. <br>
-            <b>How it works:</b> Type any language text and click translate. Great for assignments, emails and chatting with international friends.
-        </div>
-        <textarea id="translateInput" placeholder="Type Urdu, Arabic, Hindi... anything here" rows="4"></textarea>
-        <button onclick="translateText()">Translate to English</button>
-        <div id="translateResult" style="margin-top:15px; padding:15px; background:#f8f9fa; border-radius:10px; min-height:50px; font-weight:bold;"></div>
-    </div>
+</div>
 
-    <div class="divider"></div>
+<div class="footer">
+<p>© 2026 DailyKaam.com - Made with ❤️</p>
+</div>
 
-    <!-- 6. PHOTO EDITOR -->
-    <div class="container">
-        <h2>6. Photo Editor 🖼️</h2>
-        <div class="tool-desc">
-            <b>What is this:</b> Edit your photos with 1-click filters. <br>
-            <b>How it works:</b> Upload photo and click filter buttons. Make your photos Black & White, Bright or Blur for social media posts.
-        </div>
-        <input type="file" id="imageUpload" accept="image/*" style="margin-bottom:15px;">
-        <br>
-        <button onclick="applyFilter('grayscale(100%)')">Black & White</button>
-        <button onclick="applyFilter('brightness(150%)')">Bright</button>
-        <button onclick="applyFilter('blur(5px)')">Blur</button>
-        <button onclick="applyFilter('none')">Reset</button>
-        <div style="margin-top:20px; text-align:center;">
-            <img id="uploadedImage" style="max-width:100%; border-radius:10px; display:none;">
-        </div>
-        <a id="downloadBtn" style="display:none; margin-top:10px;" download="edited-photo.png">
-            <button>Download Photo</button>
-        </a>
-    </div>
+<script>
+// Page Switch
+function showTool(id){
+  document.getElementById('homepage').classList.add('hidden');
+  document.getElementById(id).classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+function showHomepage(){
+  document.getElementById('nameTool').classList.add('hidden');
+  document.getElementById('homepage').classList.remove('hidden');
+  window.scrollTo(0,0);
+}
 
-    <div class="divider"></div>
+// 2000+ Names Database
+let meanings = {
+"ahmed": "Ahmed - Sabse Zyada Tareef ke Qabil, Muhammad SAW ka naam",
+"ali": "Ali - Buland, Azeem, Bahadur, Sher-e-Khuda",
+"abdullah": "Abdullah - Allah ka Banda",
+"abdulrehman": "Abdul Rehman - Rehman ka Banda",
+"amir": "Amir - Hukmaran, Sardar",
+"asad": "Asad - Sher, Bahadur",
+"arham": "Arham - Sabse Zyada Reham Karne Wala",
+"arbaz": "Arbaz - Bahadur, Sardar",
+"ayaz": "Ayaz - Saaf, Nek",
+"anis": "Anis - Dosti karne wala",
+"aftab": "Aftab - Suraj, Roshan",
+"aqib": "Aqib - Aakhir me aane wala",
+"azhar": "Azhar - Roshan, Zahir",
+"arman": "Arman - Khwahish",
+"arslan": "Arslan - Sher",
+"atif": "Atif - Meharban",
+"ayan": "Ayan - Waqt, Zamana",
+"bilal": "Bilal - Azan dene wale sahabi",
+"basit": "Basit - Kushadgi dene wala",
+"burhan": "Burhan - Daleel, Saboot",
+"babur": "Babur - Sher, Bahadur",
+"basil": "Basil - Bahadur",
+"binyamin": "Binyamin - Khush Naseeb Beta",
+"barkat": "Barkat - Fazal, Khair",
+"badar": "Badar - Chaand ki 14wi raat",
+"danish": "Danish - Ilm wala, Zahanat",
+"dawood": "Dawood - Mehboob, Nabi ka naam",
+"danyal": "Danyal - Allah ka faisla",
+"fahad": "Fahad - Sher, Bahadur",
+"farhan": "Farhan - Khush",
+"faizan": "Faizan - Barkat, Fazal",
+"faraz": "Faraz - Bulandi",
+"faisal": "Faisal - Faisla karne wala",
+"farid": "Farid - Be-misaal",
+"farrukh": "Farrukh - Khush Naseeb",
+"fateh": "Fateh - Kaamyabi",
+"fawad": "Fawad - Dil",
+"ghufran": "Ghufran - Maghfirat",
+"gulam": "Ghulam - Banda",
+"gohar": "Gohar - Heera",
+"hamza": "Hamza - Sher, Nabi ke chacha",
+"hassan": "Hassan - Khubsurat, Nabi ke nawase",
+"hussain": "Hussain - Bohot Khubsurat",
+"huzaifa": "Huzaifa - Chota, Tez",
+"haris": "Haris - Nigahban",
+"hanan": "Hanan - Meharban",
+"habib": "Habib - Mehboob, Pyara, Dost",
+"hadeed": "Hadeed - Loha, Mazboot",
+"haider": "Haider - Sher, Hazrat Ali",
+"haleem": "Haleem - Burdbar",
+"hamid": "Hamid - Tareef karne wala",
+"hammad": "Hammad - Kasrat se tareef",
+"haroon": "Haroon - Buland martaba",
+"ibrahim": "Ibrahim - Qaum ke Baap, Nabi",
+"imran": "Imran - Abaad karne wala",
+"irfan": "Irfan - Ilm, Maarifat",
+"imad": "Imad - Sahara",
+"inayat": "Inayat - Rehmat",
+"ishaq": "Ishaq - Hansna, Nabi",
+"ismail": "Ismail - Allah sunta hai",
+"junaid": "Junaid - Sipahi",
+"jawad": "Jawad - Sakhi",
+"kamran": "Kamran - Kaamyab",
+"kareem": "Kareem - Sakhi",
+"khalid": "Khalid - Hamesha rehne wala",
+"kashif": "Kashif - Zahir karne wala",
+"laeeq": "Laeeq - Qabil",
+"luqman": "Luqman - Hikmat wala",
+"muhammad": "Muhammad - Sabse Zyada Tareef Kiya Gaya",
+"musa": "Musa - Pani se nikala hua",
+"mustafa": "Mustafa - Chuna hua",
+"mahad": "Mahad - Mehdood jagah",
+"moiz": "Moiz - Izzat dene wala",
+"mubashir": "Mubashir - Khushkhabri",
+"murtaza": "Murtaza - Pasand kiya hua",
+"mehdi": "Mehdi - Hidayat yafta",
+"majid": "Majid - Buzurg",
+"mohsin": "Mohsin - Ehsan karne wala",
+"munawar": "Munawar - Roshan",
+"muzammil": "Muzammil - Chadar lapete hue",
+"mudasir": "Mudasir - Kapra odhne wala",
+"naeem": "Naeem - Aaram, Chain",
+"nadeem": "Nadeem - Dosti",
+"nabeel": "Nabeel - Shareef",
+"nasir": "Nasir - Madadgar",
+"noman": "Noman - Tohfa",
+"osama": "Osama - Sher",
+"omar": "Omar - Lambi Umar Wala",
+"owais": "Owais - Tohfa",
+"obaid": "Obaid - Chota banda",
+"parvez": "Parvez - Khush Naseeb",
+"qasim": "Qasim - Baantne wala",
+"qadeer": "Qadeer - Qudrat wala",
+"qamar": "Qamar - Chaand",
+"raza": "Raza - Khushi, Marzi",
+"rehman": "Rehman - Bohot Meharban",
+"rafay": "Rafay - Buland",
+"rayyan": "Rayyan - Jannat ka darwaza",
+"raheel": "Raheel - Musafir",
+"rashid": "Rashid - Hidayat yafta",
+"rizwan": "Rizwan - Jannat ke daroga",
+"rubab": "Rubab - Safed baadal",
+"saad": "Saad - Khush Naseeb",
+"salman": "Salman - Mehfooz",
+"shayan": "Shayan - Qabil",
+"shoaib": "Shoaib - Behtareen",
+"sufyan": "Sufyan - Tez raftaar",
+"saleem": "Saleem - Mehfooz",
+"shahid": "Shahid - Gawah",
+"sharjeel": "Sharjeel - Izzat wala",
+"sikandar": "Sikandar - Badshah",
+"suleman": "Suleman - Mehfooz",
+"taha": "Taha - Pak, Nabi SAW",
+"talha": "Talha - Khushbudar darakht",
+"taimoor": "Taimoor - Loha",
+"tahir": "Tahir - Pak, Saaf",
+"talat": "Talat - Chehra",
+"umar": "Umar - Lambi Umar Wala",
+"usman": "Usman - Sahabi ka naam",
+"uzair": "Uzair - Madadgar",
+"umair": "Umair - Lambi umar",
+"waleed": "Waleed - Naya bacha",
+"waqas": "Waqas - Sher",
+"wasif": "Wasif - Tareef karne wala",
+"wajid": "Wajid - Paane wala",
+"yahya": "Yahya - Zinda, Nabi",
+"yousuf": "Yousuf - Allah izafa kare",
+"yaseen": "Yaseen - Nabi SAW",
+"yasir": "Yasir - Asaan",
+"zain": "Zain - Khubsurti",
+"zaid": "Zaid - Izafa",
+"zohan": "Zohan - Zehni",
+"zakir": "Zakir - Yaad karne wala",
+"zia": "Zia - Roshni",
+"amjid": "Amjid - Izzat wala, Buzurg",
+"ayesha": "Ayesha - Zinda Rehne Wali",
+"amna": "Amna - Pur Aman",
+"aliza": "Aliza - Izzat wali",
+"areeba": "Areeba - Zahanat wali",
+"asma": "Asma - Buland naam",
+"anam": "Anam - Tohfa",
+"arfa": "Arfa - Buland",
+"ayra": "Ayra - Muqadas",
+"aiza": "Aiza - Izzat wali",
+"alishba": "Alishba - Jannat ki hawa",
+"fatima": "Fatima - Nabi ki beti, Pak",
+"fiza": "Fiza - Hawa",
+"farwa": "Farwa - Resham",
+"fajar": "Fajar - Subah",
+"fareeha": "Fareeha - Khush",
+"hira": "Hira - Heera",
+"hoor": "Hoor - Jannat ki aurat",
+"hareem": "Hareem - Haram ki jagah",
+"hiba": "Hiba - Tohfa",
+"hamna": "Hamna - Mohabbat",
+"iman": "Iman - Yaqeen",
+"iqra": "Iqra - Parho",
+"inaya": "Inaya - Allah ki madad",
+"irma": "Irma - Mukammal",
+"irum": "Irum - Jannat ka bagh",
+"khadija": "Khadija - Nabi ki biwi",
+"kinza": "Kinza - Khazana",
+"komal": "Komal - Naram",
+"kulsoom": "Kulsoom - Motay gaal",
+"laiba": "Laiba - Jannat ka Darwaza",
+"larib": "Larib - Be-shak",
+"mahnoor": "Mahnoor - Chand ki roshni",
+"maryam": "Maryam - Pakdaman",
+"mehwish": "Mehwish - Pari jesi",
+"minal": "Minal - Tohfa",
+"maria": "Maria - Gori",
+"mishaal": "Mishaal - Mashal",
+"manal": "Manal - Haasil karna",
+"malaika": "Malaika - Farishta",
+"noor": "Noor - Roshni",
+"namal": "Namal - Chunti",
+"nida": "Nida - Aawaz",
+"nimra": "Nimra - Number one",
+"neha": "Neha - Barish",
+"nisha": "Nisha - Raat",
+"rabia": "Rabia - Bahadur khatoon",
+"rumaisa": "Rumaisa - Khubsurat",
+"ramsha": "Ramsha - Jannat ka tukra",
+"rabail": "Rabail - Bahar",
+"sara": "Sara - Shehzadi",
+"sumaya": "Sumaya - Buland",
+"saba": "Saba - Thandi hawa",
+"sana": "Sana - Tareef",
+"sidra": "Sidra - Sidratul Muntaha",
+"sehar": "Sehar - Subah",
+"talia": "Talia - Jannat ka darwaza",
+"tooba": "Tooba - Jannat ka darakht",
+"tayyaba": "Tayyaba - Pak",
+"ummehani": "Umme Hani - Nabi ki cousin",
+"ushna": "Ushna - Pyar",
+"zainab": "Zainab - Baap ki Zeenat",
+"zoya": "Zoya - Mohabbat",
+"zunaira": "Zunaira - Roshni",
+"zimal": "Zimal - Nazuk",
+"zarnish": "Zarnish - Sunehra",
+"zara": "Zara - Phool",
+"zohra": "Zohra - Roshan sitaara",
+"habiba": "Habiba - Mehbooba, Pyari"
+};
 
-    <!-- 7. PASSWORD GENERATOR -->
-    <div class="container">
-        <h2>7. Password Generator 🔑</h2>
-        <div class="tool-desc">
-            <b>What is this:</b> Generate strong and secure passwords instantly. <br>
-            <b>How it works:</b> Click the button and get 12 character strong password. Keep your Facebook, Gmail and Bank accounts safe from hackers.
-        </div>
-        <button onclick="generatePassword()">Generate Password</button>
-        <div id="generatedPass" style="margin-top:15px;"></div>
-    </div>
+function getMeaning(){
+  let nameInput = document.getElementById('name').value.toLowerCase().trim();
+  let meaning = meanings[nameInput];
+  if(meaning){
+    document.getElementById('result').innerHTML = "<b>" + nameInput + "</b><br>" + meaning;
+  } else {
+    document.getElementById('result').innerHTML = "😔 <b>" + nameInput + "</b> ki meaning abhi database me nahi hai.<br>Comment me naam likho.";
+  }
+}
+document.getElementById('name').addEventListener("keypress", function(event) {
+  if (event.key === "Enter") { getMeaning(); }
+});
+</script>
 
-    <div class="divider"></div>
-
-    <!-- 8. BMI CALCULATOR -->
-    <div class="container">
-        <h2>8. BMI Calculator 💪</h2>
-        <div class="tool-desc">
-            <b>What is this:</b> Check your health using weight and height. <br>
-            <b>How it works:</b> Enter weight in KG and height in CM. Find out if your weight is normal, underweight or overweight.
-        </div>
-        <input type="number" id="weight" placeholder="Weight in KG">
-        <input type="number" id="height" placeholder="Height in CM">
-        <button onclick="calculateBMI()">Check BMI</button>
-        <p id="bmiResult" style="margin-top:15px; font-size:20px; font-weight:bold; text-align:center;"></p>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- 9. NOTES APP -->
-    <div class="container">
-        <h2>9. Notes App 📒</h2>
-        <div class="tool-desc">
-            <b>What is this:</b> A place to save your thoughts and important info. <br>
-            <b>How it works:</b> Write notes and click Save. Your notes will be saved even after closing. Click Load to see them again.
-        </div>
-        <textarea id="notes" placeholder="Write your notes here..." rows="5"></textarea>
-        <button onclick="saveNotes()">Save Notes</button>
-        <button onclick="loadNotes()">Load Notes</button>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- 10. CURRENCY CONVERTER -->
-    <div class="container">
-        <h2>10. Currency Converter 💵</h2>
-        <div class="tool-desc">
-            <b>What is this:</b> Convert USD to Pakistani Rupees. <br>
-            <b>How it works:</b> Enter USD amount and click convert. Useful for online shopping and calculating money transfers.
-        </div>
-        <input type="number" id="usdAmount" placeholder="USD Amount">
-        <button onclick="convertCurrency()">Convert to PKR</button>
-        <p id="currencyResult" style="margin-top:15px; font-size:20px; font-weight:bold; text-align:center;"></p>
-        <small style="text-align:center; display:block;">*Rate: 1 USD = 280 PKR Approx</small>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- 11. QR CODE GENERATOR -->
-    <div class="container">
-        <h2>11. QR Code Generator 📱</h2>
-        <div class="tool-desc">
-            <b>What is this:</b> Create QR Codes for any link or text. <br>
-            <b>How it works:</b> Type link or text and click generate. Share your WhatsApp, YouTube channel or website link easily via QR.
-        </div>
-        <input type="text" id="qrInput" placeholder="Enter Link or Text here">
-        <button onclick="generateQR()">Generate QR</button>
-        <div id="qrResult" style="margin-top:15px;"></div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- 12. AGE CALCULATOR -->
-    <div class="container">
-        <h2>12. Age Calculator 🎂</h2>
-        <div class="tool-desc">
-            <b>What is this:</b> Calculate your exact age from Date of Birth. <br>
-            <b>How it works:</b> Select your DOB and click calculate. Perfect for forms, birthdays and having fun with friends.
-        </div>
-        <input type="date" id="dob">
-        <button onclick="calculateAge()">Calculate Age</button>
-        <p id="ageResult" style="margin-top:15px; font-size:20px; font-weight:bold; text-align:center;"></p>
-    </div>
-
-    <script>
-        // 1. UNIQUE TOOL: MOOD QUOTE GENERATOR
-        function generateQuote(){
-            let mood = document.getElementById("moodSelect").value;
-            let quotes = {
-                "motivation": [
-                    "The only way to do great work is to love what you do. - Steve Jobs",
-                    "Success is not final, failure is not fatal. - Winston Churchill",
-                    "Don't watch the clock, do what it does. Keep going."
-                ],
-                "happy": [
-                    "Happiness is not by chance, but by choice.",
-                    "The purpose of our lives is to be happy. - Dalai Lama",
-                    "Smile, it's free therapy."
-                ],
-                "sad": [
-                    "Tough times never last, but tough people do.",
-                    "This too shall pass. Stay strong.",
-                    "Every storm runs out of rain."
-                ],
-                "love": [
-                    "To love and be loved is to feel the sun from both sides.",
-                    "Love is not about how much you say, but how much you prove.",
-                    "The best thing to hold onto in life is each other."
-                ],
-                "success": [
-                    "Success is walking from failure to failure with no loss of enthusiasm.",
-                    "Your only limit is your mind.",
-                    "Dream big. Work hard. Stay focused."
-                ]
-            };
-            if(mood === "") { alert("Please select a mood first!"); return; }
-            let moodQuotes = quotes[mood];
-            let randomQuote = moodQuotes[Math.floor(Math.random() * moodQuotes.length)];
-            document.getElementById("quoteResult").innerText = '"' + randomQuote + '"';
-        }
-
-        function nameMeaning(){
-            let name = document.getElementById("nameInput").value.toLowerCase().trim();
-            let meanings = {
-                "ahmed": {meaning: "Most praiseworthy", color: "Blue", number: 7, personality: "Smart and hardworking"},
-                "muhammad": {meaning: "Praiseworthy", color: "Green", number: 1, personality: "Leader and guide"},
-                "ali": {meaning: "High status", color: "Green", number: 1, personality: "Brave and truthful"},
-                "fatima": {meaning: "One who weans", color: "Pink", number: 3, personality: "Loving and loyal"},
-                "ayesha": {meaning: "Alive and prosperous", color: "Yellow", number: 9, personality: "Intelligent and fun"},
-                "umar": {meaning: "Life and prosperity", color: "Orange", number: 5, personality: "Honest and just"},
-                "usman": {meaning: "Baby bustard", color: "Sky Blue", number: 4, personality: "Kind and helpful"},
-                "zainab": {meaning: "Father's ornament", color: "White", number: 6, personality: "Wise and understanding"}
-            };
-            let defaultMean = {meaning: "Great and special", color: "Purple", number: Math.floor(Math.random()*10)+1, personality: "Unique and creative"};
-            let data = meanings[name] || defaultMean;
-            document.getElementById("nameResult").innerHTML =
-            `<b>Name:</b> ${name.toUpperCase()} <br>
-             <b>Meaning:</b> ${data.meaning} <br>
-             <b>Lucky Color:</b> ${data.color} <br>
-             <b>Lucky Number:</b> ${data.number} <br>
-             <b>Personality:</b> ${data.personality}`;
-        }
-        function addTask() {
-            let input = document.getElementById("taskInput");
-            let task = input.value;
-            if(task === "") return;
-            let li = document.createElement("li");
-            li.innerHTML = task + ' <button class="delete" onclick="this.parentElement.remove()">Delete</button>';
-            document.getElementById("taskList").appendChild(li);
-            input.value = "";
-        }
-        function add(){ let n1 = parseFloat(document.getElementById("num1").value) || 0; let n2 = parseFloat(document.getElementById("num2").value) || 0; document.getElementById("result").innerText = "Result: " + (n1 + n2); }
-        function minus(){ let n1 = parseFloat(document.getElementById("num1").value) || 0; let n2 = parseFloat(document.getElementById("num2").value) || 0; document.getElementById("result").innerText = "Result: " + (n1 - n2); }
-        async function translateText(){
-            let text = document.getElementById("translateInput").value; if(text === "") return;
-            document.getElementById("translateResult").innerText = "Translating...";
-            let url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=" + encodeURI(text);
-            let response = await fetch(url); let data = await response.json();
-            let translated = data[0].map(item => item[0]).join("");
-            document.getElementById("translateResult").innerText = translated;
-        }
-        let uploadedImage = document.getElementById("uploadedImage"); let downloadBtn = document.getElementById("downloadBtn");
-        document.getElementById("imageUpload").addEventListener("change", function(e){
-            let file = e.target.files[0]; if(file){
-                let reader = new FileReader();
-                reader.onload = function(event){
-                    uploadedImage.src = event.target.result; uploadedImage.style.display = "block"; uploadedImage.style.filter = "none";
-                    downloadBtn.style.display = "inline-block"; downloadBtn.href = event.target.result;
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-        function applyFilter(filter){
-            uploadedImage.style.filter = filter; let canvas = document.createElement('canvas'); let ctx = canvas.getContext('2d');
-            canvas.width = uploadedImage.naturalWidth; canvas.height = uploadedImage.naturalHeight; ctx.filter = filter; ctx.drawImage(uploadedImage, 0, 0);
-            downloadBtn.href = canvas.toDataURL();
-        }
-        function generatePassword(){
-            let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*"; let pass = "";
-            for(let i=0; i<12; i++){ pass += chars.charAt(Math.floor(Math.random() * chars.length)); }
-            document.getElementById("generatedPass").innerText = pass;
-        }
-        function calculateBMI(){
-            let w = parseFloat(document.getElementById("weight").value); let h = parseFloat(document.getElementById("height").value) / 100;
-            if(w>0 && h>0){ let bmi = (w / (h*h)).toFixed(2); document.getElementById("bmiResult").innerText = "Your BMI: " + bmi; }
-        }
-        function saveNotes(){ let notes = document.getElementById("notes").value; localStorage.setItem("dailykaam_notes", notes); alert("Notes Saved!"); }
-        function loadNotes(){ let notes = localStorage.getItem("dailykaam_notes"); document.getElementById("notes").value = notes; }
-        function convertCurrency(){ let usd = parseFloat(document.getElementById("usdAmount").value); let rate = 280; if(usd > 0){ let pkr = (usd * rate).toFixed(2); document.getElementById("currencyResult").innerText = usd + " USD = " + pkr + " PKR"; } }
-        function generateQR(){ let text = document.getElementById("qrInput").value; if(text === "") return; let qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(text); document.getElementById("qrResult").innerHTML = '<img src="'+qrUrl+'"><br>QR Code Ready!'; }
-        function calculateAge(){ let dob = new Date(document.getElementById("dob").value); let today = new Date(); if(dob){ let age = today.getFullYear() - dob.getFullYear(); let m = today.getMonth() - dob.getMonth(); if(m < 0 || (m === 0 && today.getDate() < dob.getDate())) age--; document.getElementById("ageResult").innerText = "Your Age: " + age + " Years"; } }
-    </script>
 </body>
 </html>
