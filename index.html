@@ -6,21 +6,63 @@
     <title>DailyKaam - All in One Tools</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-       .container { max-width: 600px; margin: 30px auto; background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        h1 { color: white; text-align: center; margin-bottom: 30px; font-size: 36px; }
-        h2 { color: #764ba2; text-align: center; margin-bottom: 15px; font-size: 22px; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
-        p { text-align: center; color: #666; margin-bottom: 20px; }
-       .input-box { display: flex; gap: 10px; margin-bottom: 20px; }
-        input, textarea { flex: 1; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; width: 100%; margin-bottom: 10px; }
-        button { padding: 12px 20px; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; margin: 5px; font-weight: bold; }
-        button:hover { background: #764ba2; transform: scale(1.05); }
+        body { 
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh; padding: 20px; 
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+     .container { 
+            max-width: 600px; margin: 30px auto; background: rgba(255, 255, 255, 0.95); 
+            border-radius: 20px; padding: 30px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s;
+        }
+     .container:hover { transform: translateY(-5px); }
+        h1 { 
+            color: white; text-align: center; margin-bottom: 30px; font-size: 40px; 
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+        h2 { 
+            color: #764ba2; text-align: center; margin-bottom: 15px; font-size: 24px; 
+            border-bottom: 3px solid #667eea; padding-bottom: 10px; 
+        }
+        p { text-align: center; color: #555; margin-bottom: 20px; }
+     .input-box { display: flex; gap: 10px; margin-bottom: 20px; }
+        input, textarea, select { 
+            flex: 1; padding: 14px; border: 2px solid #ddd; border-radius: 12px; 
+            font-size: 16px; width: 100%; margin-bottom: 10px; 
+            transition: border 0.3s;
+        }
+        input:focus, textarea:focus, select:focus { border: 2px solid #667eea; outline: none; }
+        button { 
+            padding: 14px 24px; background: linear-gradient(90deg, #667eea, #764ba2); 
+            color: white; border: none; border-radius: 12px; cursor: pointer; 
+            font-size: 16px; margin: 5px; font-weight: bold; 
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s;
+        }
+        button:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 6px 15px rgba(102, 126, 234, 0.6);
+        }
         ul { list-style: none; }
-        li { background: #f8f9fa; padding: 12px; margin-bottom: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
-       .delete { background: #ff4757; padding: 5px 10px; font-size: 14px; }
-       .delete:hover { background: #e84118; }
-       .divider { height: 4px; background: linear-gradient(90deg, #667eea, #764ba2); margin: 40px auto; width: 80%; border-radius: 2px; }
-        #generatedPass { background:#e8f0fe; padding:10px; border-radius:8px; font-weight:bold; word-break:break-all; }
+        li { 
+            background: #f8f9fa; padding: 12px; margin-bottom: 10px; border-radius: 10px; 
+            display: flex; justify-content: space-between; align-items: center; 
+            border-left: 4px solid #667eea;
+        }
+     .delete { background: linear-gradient(90deg, #ff4757, #e84118); padding: 8px 12px; font-size: 14px; }
+     .divider { height: 2px; background: rgba(255,255,255,0.3); margin: 40px auto; width: 80%; border-radius: 2px; }
+        #generatedPass, #qrResult { background:#e8f0fe; padding:15px; border-radius:10px; font-weight:bold; word-break:break-all; text-align:center; font-size:18px; }
+        #qrResult img { max-width: 200px; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -58,7 +100,7 @@
         <p>Koi bhi zuban likho, English me convert ho jayegi</p>
         <textarea id="translateInput" placeholder="Yahan Urdu, Arabic, Hindi... kuch bhi likho" rows="4"></textarea>
         <button onclick="translateText()">English me Translate karo</button>
-        <div id="translateResult" style="margin-top:15px; padding:15px; background:#f8f9fa; border-radius:8px; min-height:50px; font-weight:bold;"></div>
+        <div id="translateResult" style="margin-top:15px; padding:15px; background:#f8f9fa; border-radius:10px; min-height:50px; font-weight:bold;"></div>
     </div>
 
     <div class="divider"></div>
@@ -112,6 +154,40 @@
         <textarea id="notes" placeholder="Yahan notes likho..." rows="5"></textarea>
         <button onclick="saveNotes()">Save Notes</button>
         <button onclick="loadNotes()">Load Notes</button>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 8. CURRENCY CONVERTER -->
+    <div class="container">
+        <h2>8. Currency Converter 💵</h2>
+        <p>USD to PKR rate check karo</p>
+        <input type="number" id="usdAmount" placeholder="USD Amount">
+        <button onclick="convertCurrency()">PKR me Convert karo</button>
+        <p id="currencyResult" style="margin-top:15px; font-size:20px; font-weight:bold; text-align:center;"></p>
+        <small style="text-align:center; display:block;">*Rate: 1 USD = 280 PKR Approx</small>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 9. QR CODE GENERATOR -->
+    <div class="container">
+        <h2>9. QR Code Generator 📱</h2>
+        <p>Koi bhi link ya text ka QR banao</p>
+        <input type="text" id="qrInput" placeholder="Link ya Text yahan likho">
+        <button onclick="generateQR()">QR Banao</button>
+        <div id="qrResult" style="margin-top:15px;"></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 10. AGE CALCULATOR -->
+    <div class="container">
+        <h2>10. Age Calculator 🎂</h2>
+        <p>Apni date of birth daalo</p>
+        <input type="date" id="dob">
+        <button onclick="calculateAge()">Age Check karo</button>
+        <p id="ageResult" style="margin-top:15px; font-size:20px; font-weight:bold; text-align:center;"></p>
     </div>
 
     <script>
@@ -207,6 +283,36 @@
         function loadNotes(){
             let notes = localStorage.getItem("dailykaam_notes");
             document.getElementById("notes").value = notes;
+        }
+
+        // 8. CURRENCY CONVERTER
+        function convertCurrency(){
+            let usd = parseFloat(document.getElementById("usdAmount").value);
+            let rate = 280; // Approx rate
+            if(usd > 0){
+                let pkr = (usd * rate).toFixed(2);
+                document.getElementById("currencyResult").innerText = usd + " USD = " + pkr + " PKR";
+            }
+        }
+
+        // 9. QR CODE GENERATOR
+        function generateQR(){
+            let text = document.getElementById("qrInput").value;
+            if(text === "") return;
+            let qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(text);
+            document.getElementById("qrResult").innerHTML = '<img src="'+qrUrl+'"><br>QR Code Ready!';
+        }
+
+        // 10. AGE CALCULATOR
+        function calculateAge(){
+            let dob = new Date(document.getElementById("dob").value);
+            let today = new Date();
+            if(dob){
+                let age = today.getFullYear() - dob.getFullYear();
+                let m = today.getMonth() - dob.getMonth();
+                if(m < 0 || (m === 0 && today.getDate() < dob.getDate())) age--;
+                document.getElementById("ageResult").innerText = "Apki Age: " + age + " Saal";
+            }
         }
     </script>
 </body>
