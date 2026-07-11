@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DailyKaam - Roz ke kaam asaan</title>
+    <title>DailyKaam - All in One Tools</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-      .container { max-width: 600px; margin: 30px auto; background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0.2); }
-        h1 { color: #667eea; text-align: center; margin-bottom: 10px; font-size: 28px; }
+       .container { max-width: 600px; margin: 30px auto; background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        h1 { color: white; text-align: center; margin-bottom: 30px; font-size: 36px; }
         h2 { color: #764ba2; text-align: center; margin-bottom: 15px; font-size: 22px; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
         p { text-align: center; color: #666; margin-bottom: 20px; }
-      .input-box { display: flex; gap: 10px; margin-bottom: 20px; }
+       .input-box { display: flex; gap: 10px; margin-bottom: 20px; }
         input, textarea { flex: 1; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; width: 100%; margin-bottom: 10px; }
         button { padding: 12px 20px; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; margin: 5px; font-weight: bold; }
         button:hover { background: #764ba2; transform: scale(1.05); }
         ul { list-style: none; }
         li { background: #f8f9fa; padding: 12px; margin-bottom: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
-      .delete { background: #ff4757; padding: 5px 10px; font-size: 14px; }
-      .delete:hover { background: #e84118; }
-      .divider { height: 4px; background: linear-gradient(90deg, #667eea, #764ba2); margin: 40px auto; width: 80%; border-radius: 2px; }
+       .delete { background: #ff4757; padding: 5px 10px; font-size: 14px; }
+       .delete:hover { background: #e84118; }
+       .divider { height: 4px; background: linear-gradient(90deg, #667eea, #764ba2); margin: 40px auto; width: 80%; border-radius: 2px; }
+        #generatedPass { background:#e8f0fe; padding:10px; border-radius:8px; font-weight:bold; word-break:break-all; }
     </style>
 </head>
 <body>
-    <h1 style="color:white; font-size:36px; margin-bottom:30px;">DailyKaam - All in One Tools ✅</h1>
+    <h1>DailyKaam - All in One Tools ✅</h1>
 
-    <!-- TOOL 1: TODO LIST -->
+    <!-- 1. TODO LIST -->
     <div class="container">
         <h2>1. To-Do List 📝</h2>
         <p>Apne roz ke kaam yahan likho</p>
@@ -38,7 +39,7 @@
 
     <div class="divider"></div>
 
-    <!-- TOOL 2: CALCULATOR -->
+    <!-- 2. CALCULATOR -->
     <div class="container">
         <h2>2. Calculator 🧮</h2>
         <p>Jama aur Minus asani se karo</p>
@@ -51,7 +52,7 @@
 
     <div class="divider"></div>
 
-    <!-- TOOL 3: TRANSLATOR -->
+    <!-- 3. TRANSLATOR -->
     <div class="container">
         <h2>3. Language Translator 🌍</h2>
         <p>Koi bhi zuban likho, English me convert ho jayegi</p>
@@ -62,7 +63,7 @@
 
     <div class="divider"></div>
 
-    <!-- TOOL 4: PHOTO EDITOR -->
+    <!-- 4. PHOTO EDITOR -->
     <div class="container">
         <h2>4. Photo Editor 🖼️</h2>
         <p>Apni pic upload karo aur 1 click me edit karo</p>
@@ -80,8 +81,41 @@
         </a>
     </div>
 
+    <div class="divider"></div>
+
+    <!-- 5. PASSWORD GENERATOR -->
+    <div class="container">
+        <h2>5. Password Generator 🔑</h2>
+        <p>1 click me strong password banao</p>
+        <button onclick="generatePassword()">Generate Password</button>
+        <div id="generatedPass" style="margin-top:15px;"></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 6. BMI CALCULATOR -->
+    <div class="container">
+        <h2>6. BMI Calculator 💪</h2>
+        <p>Apna wazan aur height daalo</p>
+        <input type="number" id="weight" placeholder="Wazan in KG">
+        <input type="number" id="height" placeholder="Height in CM">
+        <button onclick="calculateBMI()">BMI Check karo</button>
+        <p id="bmiResult" style="margin-top:15px; font-size:20px; font-weight:bold; text-align:center;"></p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 7. NOTES APP -->
+    <div class="container">
+        <h2>7. Notes App 📒</h2>
+        <p>Jo likho wo save ho jayega</p>
+        <textarea id="notes" placeholder="Yahan notes likho..." rows="5"></textarea>
+        <button onclick="saveNotes()">Save Notes</button>
+        <button onclick="loadNotes()">Load Notes</button>
+    </div>
+
     <script>
-        // TODO SCRIPT
+        // 1. TODO
         function addTask() {
             let input = document.getElementById("taskInput");
             let task = input.value;
@@ -91,11 +125,8 @@
             document.getElementById("taskList").appendChild(li);
             input.value = "";
         }
-        document.getElementById("taskInput").addEventListener("keypress", function(e) {
-            if(e.key === "Enter") addTask();
-        });
 
-        // CALCULATOR SCRIPT
+        // 2. CALCULATOR
         function add(){
             let n1 = parseFloat(document.getElementById("num1").value) || 0;
             let n2 = parseFloat(document.getElementById("num2").value) || 0;
@@ -107,7 +138,7 @@
             document.getElementById("result").innerText = "Jawab: " + (n1 - n2);
         }
 
-        // TRANSLATOR SCRIPT
+        // 3. TRANSLATOR
         async function translateText(){
             let text = document.getElementById("translateInput").value;
             if(text === "") return;
@@ -119,7 +150,7 @@
             document.getElementById("translateResult").innerText = translated;
         }
 
-        // PHOTO EDITOR SCRIPT
+        // 4. PHOTO EDITOR
         let uploadedImage = document.getElementById("uploadedImage");
         let downloadBtn = document.getElementById("downloadBtn");
         document.getElementById("imageUpload").addEventListener("change", function(e){
@@ -145,6 +176,37 @@
             ctx.filter = filter;
             ctx.drawImage(uploadedImage, 0, 0);
             downloadBtn.href = canvas.toDataURL();
+        }
+
+        // 5. PASSWORD GENERATOR
+        function generatePassword(){
+            let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+            let pass = "";
+            for(let i=0; i<12; i++){
+                pass += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById("generatedPass").innerText = pass;
+        }
+
+        // 6. BMI CALCULATOR
+        function calculateBMI(){
+            let w = parseFloat(document.getElementById("weight").value);
+            let h = parseFloat(document.getElementById("height").value) / 100;
+            if(w>0 && h>0){
+                let bmi = (w / (h*h)).toFixed(2);
+                document.getElementById("bmiResult").innerText = "Apka BMI: " + bmi;
+            }
+        }
+
+        // 7. NOTES APP
+        function saveNotes(){
+            let notes = document.getElementById("notes").value;
+            localStorage.setItem("dailykaam_notes", notes);
+            alert("Notes Save ho gaye!");
+        }
+        function loadNotes(){
+            let notes = localStorage.getItem("dailykaam_notes");
+            document.getElementById("notes").value = notes;
         }
     </script>
 </body>
