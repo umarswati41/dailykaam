@@ -1,0 +1,11 @@
+    <!DOCTYPE html>
+    <html lang="ur">
+    <head>
+        <meta charset="UTF-8">
+        <title>DailyKaam</title>
+    </head>
+    <body>
+        <h1>DailyKaam ??</h1>
+        <p>Roz ke kaam asaan!</p>
+    </body>
+    </html>
