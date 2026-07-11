@@ -1,79 +1,89 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DailyKaam - All in One Tools</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { 
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            min-height: 100vh; padding: 20px; 
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh; padding: 20px; position: relative; overflow-x: hidden;
         }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        body::before {
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            animation: moveStars 200s linear infinite; z-index: -1;
         }
-     .container { 
-            max-width: 600px; margin: 30px auto; background: rgba(255, 255, 255, 0.95); 
-            border-radius: 20px; padding: 30px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: transform 0.3s;
+        @keyframes moveStars { from { background-position: 0 0; } to { background-position: -10000px 5000px; } }
+
+    .container {
+            max-width: 600px; margin: 30px auto; background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px; padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-     .container:hover { transform: translateY(-5px); }
-        h1 { 
-            color: white; text-align: center; margin-bottom: 30px; font-size: 40px; 
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-        }
-        h2 { 
-            color: #764ba2; text-align: center; margin-bottom: 15px; font-size: 24px; 
-            border-bottom: 3px solid #667eea; padding-bottom: 10px; 
-        }
+    .container:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4); }
+        h1 { color: white; text-align: center; margin-bottom: 10px; font-size: 45px; text-shadow: 0 0 15px #667eea; }
+    .subtitle { color: #ddd; text-align: center; margin-bottom: 40px; font-size: 18px; }
+        h2 { color: #667eea; text-align: center; margin-bottom: 8px; font-size: 24px; border-bottom: 3px solid #764ba2; padding-bottom: 10px; }
+    .tool-desc { background: #f0f4ff; padding: 12px; border-radius: 10px; margin-bottom: 15px; font-size: 14px; color: #333; line-height: 1.6; }
+    .tool-desc b { color: #764ba2; }
         p { text-align: center; color: #555; margin-bottom: 20px; }
-     .input-box { display: flex; gap: 10px; margin-bottom: 20px; }
-        input, textarea, select { 
-            flex: 1; padding: 14px; border: 2px solid #ddd; border-radius: 12px; 
-            font-size: 16px; width: 100%; margin-bottom: 10px; 
+    .input-box { display: flex; gap: 10px; margin-bottom: 20px; }
+        input, textarea {
+            flex: 1; padding: 14px; border: 2px solid #ddd; border-radius: 12px;
+            font-size: 16px; width: 100%; margin-bottom: 10px;
             transition: border 0.3s;
         }
-        input:focus, textarea:focus, select:focus { border: 2px solid #667eea; outline: none; }
-        button { 
-            padding: 14px 24px; background: linear-gradient(90deg, #667eea, #764ba2); 
-            color: white; border: none; border-radius: 12px; cursor: pointer; 
-            font-size: 16px; margin: 5px; font-weight: bold; 
-            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+        input:focus, textarea:focus { border: 2px solid #667eea; outline: none; }
+        button {
+            padding: 14px 24px; background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white; border: none; border-radius: 12px; cursor: pointer;
+            font-size: 16px; margin: 5px; font-weight: bold;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
             transition: all 0.3s;
         }
-        button:hover { 
-            transform: scale(1.05); 
-            box-shadow: 0 6px 15px rgba(102, 126, 234, 0.6);
-        }
+        button:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(102, 126, 234, 0.8); }
         ul { list-style: none; }
-        li { 
-            background: #f8f9fa; padding: 12px; margin-bottom: 10px; border-radius: 10px; 
-            display: flex; justify-content: space-between; align-items: center; 
-            border-left: 4px solid #667eea;
-        }
-     .delete { background: linear-gradient(90deg, #ff4757, #e84118); padding: 8px 12px; font-size: 14px; }
-     .divider { height: 2px; background: rgba(255,255,255,0.3); margin: 40px auto; width: 80%; border-radius: 2px; }
-        #generatedPass, #qrResult { background:#e8f0fe; padding:15px; border-radius:10px; font-weight:bold; word-break:break-all; text-align:center; font-size:18px; }
+        li { background: #f8f9fa; padding: 12px; margin-bottom: 10px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; border-left: 4px solid #667eea; }
+    .delete { background: linear-gradient(90deg, #ff4757, #e84118); padding: 8px 12px; font-size: 14px; }
+    .divider { height: 2px; background: linear-gradient(90deg, transparent, #667eea, transparent); margin: 40px auto; width: 80%; border-radius: 2px; }
+        #generatedPass, #qrResult, #nameResult { background:#e8f0fe; padding:15px; border-radius:10px; font-weight:bold; word-break:break-all; text-align:center; font-size:16px; }
         #qrResult img { max-width: 200px; margin-top: 10px; }
+        #nameResult { text-align:left; line-height: 1.8; }
+    .special { border: 3px solid gold; box-shadow: 0 25px rgba(255, 215, 0, 0.6); }
     </style>
 </head>
 <body>
-    <h1>DailyKaam - All in One Tools ✅</h1>
+    <h1>DailyKaam ✨</h1>
+    <p class="subtitle">11 Free Tools - Everything in One Place</p>
 
-    <!-- 1. TODO LIST -->
+    <!-- 1. NAME MEANING TOOL -->
+    <div class="container special">
+        <h2>1. Name Meaning + Lucky Number ✨</h2>
+        <div class="tool-desc">
+            <b>What is this:</b> Find your name meaning, lucky color and personality. <br>
+            <b>How it works:</b> Perfect for sharing with friends and knowing fun facts about yourself.
+        </div>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="nameMeaning()">Reveal Secret</button>
+        <div id="nameResult" style="margin-top:15px;"></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 2. TODO LIST -->
     <div class="container">
-        <h2>1. To-Do List 📝</h2>
-        <p>Apne roz ke kaam yahan likho</p>
+        <h2>2. To-Do List 📝</h2>
+        <div class="tool-desc">
+            <b>What is this:</b> A simple list to write your daily tasks. <br>
+            <b>How it works:</b> Stay organized and never forget important work. Delete tasks when completed.
+        </div>
         <div class="input-box">
-            <input type="text" id="taskInput" placeholder="Naya kaam likho...">
+            <input type="text" id="taskInput" placeholder="Enter new task...">
             <button onclick="addTask()">Add</button>
         </div>
         <ul id="taskList"></ul>
@@ -81,34 +91,43 @@
 
     <div class="divider"></div>
 
-    <!-- 2. CALCULATOR -->
+    <!-- 3. CALCULATOR -->
     <div class="container">
-        <h2>2. Calculator 🧮</h2>
-        <p>Jama aur Minus asani se karo</p>
-        <input type="number" id="num1" placeholder="Pehla number">
-        <input type="number" id="num2" placeholder="Doosra number">
-        <button onclick="add()">Jama</button>
+        <h2>3. Calculator 🧮</h2>
+        <div class="tool-desc">
+            <b>What is this:</b> A basic calculator for addition and subtraction. <br>
+            <b>How it works:</b> Quickly calculate bills, expenses or any math problems.
+        </div>
+        <input type="number" id="num1" placeholder="First number">
+        <input type="number" id="num2" placeholder="Second number">
+        <button onclick="add()">Add</button>
         <button onclick="minus()">Minus</button>
         <p id="result" style="margin-top:15px; font-size:20px; font-weight:bold; text-align:center;"></p>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 3. TRANSLATOR -->
+    <!-- 4. TRANSLATOR -->
     <div class="container">
-        <h2>3. Language Translator 🌍</h2>
-        <p>Koi bhi zuban likho, English me convert ho jayegi</p>
-        <textarea id="translateInput" placeholder="Yahan Urdu, Arabic, Hindi... kuch bhi likho" rows="4"></textarea>
-        <button onclick="translateText()">English me Translate karo</button>
+        <h2>4. Language Translator 🌍</h2>
+        <div class="tool-desc">
+            <b>What is this:</b> Translate Urdu, Hindi, Arabic to English instantly. <br>
+            <b>How it works:</b> Great for assignments, emails and chatting with international friends.
+        </div>
+        <textarea id="translateInput" placeholder="Type Urdu, Arabic, Hindi... anything here" rows="4"></textarea>
+        <button onclick="translateText()">Translate to English</button>
         <div id="translateResult" style="margin-top:15px; padding:15px; background:#f8f9fa; border-radius:10px; min-height:50px; font-weight:bold;"></div>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 4. PHOTO EDITOR -->
+    <!-- 5. PHOTO EDITOR -->
     <div class="container">
-        <h2>4. Photo Editor 🖼️</h2>
-        <p>Apni pic upload karo aur 1 click me edit karo</p>
+        <h2>5. Photo Editor 🖼️</h2>
+        <div class="tool-desc">
+            <b>What is this:</b> Edit your photos with 1-click filters. <br>
+            <b>How it works:</b> Make your photos Black & White, Bright or Blur for social media posts.
+        </div>
         <input type="file" id="imageUpload" accept="image/*" style="margin-bottom:15px;">
         <br>
         <button onclick="applyFilter('grayscale(100%)')">Black & White</button>
@@ -125,73 +144,111 @@
 
     <div class="divider"></div>
 
-    <!-- 5. PASSWORD GENERATOR -->
+    <!-- 6. PASSWORD GENERATOR -->
     <div class="container">
-        <h2>5. Password Generator 🔑</h2>
-        <p>1 click me strong password banao</p>
+        <h2>6. Password Generator 🔑</h2>
+        <div class="tool-desc">
+            <b>What is this:</b> Generate strong and secure passwords instantly. <br>
+            <b>How it works:</b> Keep your Facebook, Gmail and Bank accounts safe from hackers.
+        </div>
         <button onclick="generatePassword()">Generate Password</button>
         <div id="generatedPass" style="margin-top:15px;"></div>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 6. BMI CALCULATOR -->
+    <!-- 7. BMI CALCULATOR -->
     <div class="container">
-        <h2>6. BMI Calculator 💪</h2>
-        <p>Apna wazan aur height daalo</p>
-        <input type="number" id="weight" placeholder="Wazan in KG">
+        <h2>7. BMI Calculator 💪</h2>
+        <div class="tool-desc">
+            <b>What is this:</b> Check your health using weight and height. <br>
+            <b>How it works:</b> Find out if your weight is normal, underweight or overweight.
+        </div>
+        <input type="number" id="weight" placeholder="Weight in KG">
         <input type="number" id="height" placeholder="Height in CM">
-        <button onclick="calculateBMI()">BMI Check karo</button>
+        <button onclick="calculateBMI()">Check BMI</button>
         <p id="bmiResult" style="margin-top:15px; font-size:20px; font-weight:bold; text-align:center;"></p>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 7. NOTES APP -->
+    <!-- 8. NOTES APP -->
     <div class="container">
-        <h2>7. Notes App 📒</h2>
-        <p>Jo likho wo save ho jayega</p>
-        <textarea id="notes" placeholder="Yahan notes likho..." rows="5"></textarea>
+        <h2>8. Notes App 📒</h2>
+        <div class="tool-desc">
+            <b>What is this:</b> A place to save your thoughts and important info. <br>
+            <b>How it works:</b> Save passwords, numbers or reminders. Your notes will be saved even after closing.
+        </div>
+        <textarea id="notes" placeholder="Write your notes here..." rows="5"></textarea>
         <button onclick="saveNotes()">Save Notes</button>
         <button onclick="loadNotes()">Load Notes</button>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 8. CURRENCY CONVERTER -->
+    <!-- 9. CURRENCY CONVERTER -->
     <div class="container">
-        <h2>8. Currency Converter 💵</h2>
-        <p>USD to PKR rate check karo</p>
+        <h2>9. Currency Converter 💵</h2>
+        <div class="tool-desc">
+            <b>What is this:</b> Convert USD to Pakistani Rupees. <br>
+            <b>How it works:</b> Useful for online shopping and calculating money transfers.
+        </div>
         <input type="number" id="usdAmount" placeholder="USD Amount">
-        <button onclick="convertCurrency()">PKR me Convert karo</button>
+        <button onclick="convertCurrency()">Convert to PKR</button>
         <p id="currencyResult" style="margin-top:15px; font-size:20px; font-weight:bold; text-align:center;"></p>
         <small style="text-align:center; display:block;">*Rate: 1 USD = 280 PKR Approx</small>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 9. QR CODE GENERATOR -->
+    <!-- 10. QR CODE GENERATOR -->
     <div class="container">
-        <h2>9. QR Code Generator 📱</h2>
-        <p>Koi bhi link ya text ka QR banao</p>
-        <input type="text" id="qrInput" placeholder="Link ya Text yahan likho">
-        <button onclick="generateQR()">QR Banao</button>
+        <h2>10. QR Code Generator 📱</h2>
+        <div class="tool-desc">
+            <b>What is this:</b> Create QR Codes for any link or text. <br>
+            <b>How it works:</b> Share your WhatsApp, YouTube channel or website link easily via QR.
+        </div>
+        <input type="text" id="qrInput" placeholder="Enter Link or Text here">
+        <button onclick="generateQR()">Generate QR</button>
         <div id="qrResult" style="margin-top:15px;"></div>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 10. AGE CALCULATOR -->
+    <!-- 11. AGE CALCULATOR -->
     <div class="container">
-        <h2>10. Age Calculator 🎂</h2>
-        <p>Apni date of birth daalo</p>
+        <h2>11. Age Calculator 🎂</h2>
+        <div class="tool-desc">
+            <b>What is this:</b> Calculate your exact age from Date of Birth. <br>
+            <b>How it works:</b> Perfect for forms, birthdays and having fun with friends.
+        </div>
         <input type="date" id="dob">
-        <button onclick="calculateAge()">Age Check karo</button>
+        <button onclick="calculateAge()">Calculate Age</button>
         <p id="ageResult" style="margin-top:15px; font-size:20px; font-weight:bold; text-align:center;"></p>
     </div>
 
     <script>
-        // 1. TODO
+        function nameMeaning(){
+            let name = document.getElementById("nameInput").value.toLowerCase().trim();
+            let meanings = {
+                "ahmed": {meaning: "Most praiseworthy", color: "Blue", number: 7, personality: "Smart and hardworking"},
+                "muhammad": {meaning: "Praiseworthy", color: "Green", number: 1, personality: "Leader and guide"},
+                "ali": {meaning: "High status", color: "Green", number: 1, personality: "Brave and truthful"},
+                "fatima": {meaning: "One who weans", color: "Pink", number: 3, personality: "Loving and loyal"},
+                "ayesha": {meaning: "Alive and prosperous", color: "Yellow", number: 9, personality: "Intelligent and fun"},
+                "umar": {meaning: "Life and prosperity", color: "Orange", number: 5, personality: "Honest and just"},
+                "usman": {meaning: "Baby bustard", color: "Sky Blue", number: 4, personality: "Kind and helpful"},
+                "zainab": {meaning: "Father's ornament", color: "White", number: 6, personality: "Wise and understanding"}
+            };
+            let defaultMean = {meaning: "Great and special", color: "Purple", number: Math.floor(Math.random()*10)+1, personality: "Unique and creative"};
+            let data = meanings[name] || defaultMean;
+            document.getElementById("nameResult").innerHTML =
+            `<b>Name:</b> ${name.toUpperCase()} <br>
+             <b>Meaning:</b> ${data.meaning} <br>
+             <b>Lucky Color:</b> ${data.color} <br>
+             <b>Lucky Number:</b> ${data.number} <br>
+             <b>Personality:</b> ${data.personality}`;
+        }
         function addTask() {
             let input = document.getElementById("taskInput");
             let task = input.value;
@@ -201,119 +258,46 @@
             document.getElementById("taskList").appendChild(li);
             input.value = "";
         }
-
-        // 2. CALCULATOR
-        function add(){
-            let n1 = parseFloat(document.getElementById("num1").value) || 0;
-            let n2 = parseFloat(document.getElementById("num2").value) || 0;
-            document.getElementById("result").innerText = "Jawab: " + (n1 + n2);
-        }
-        function minus(){
-            let n1 = parseFloat(document.getElementById("num1").value) || 0;
-            let n2 = parseFloat(document.getElementById("num2").value) || 0;
-            document.getElementById("result").innerText = "Jawab: " + (n1 - n2);
-        }
-
-        // 3. TRANSLATOR
+        function add(){ let n1 = parseFloat(document.getElementById("num1").value) || 0; let n2 = parseFloat(document.getElementById("num2").value) || 0; document.getElementById("result").innerText = "Result: " + (n1 + n2); }
+        function minus(){ let n1 = parseFloat(document.getElementById("num1").value) || 0; let n2 = parseFloat(document.getElementById("num2").value) || 0; document.getElementById("result").innerText = "Result: " + (n1 - n2); }
         async function translateText(){
-            let text = document.getElementById("translateInput").value;
-            if(text === "") return;
+            let text = document.getElementById("translateInput").value; if(text === "") return;
             document.getElementById("translateResult").innerText = "Translating...";
             let url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=" + encodeURI(text);
-            let response = await fetch(url);
-            let data = await response.json();
+            let response = await fetch(url); let data = await response.json();
             let translated = data[0].map(item => item[0]).join("");
             document.getElementById("translateResult").innerText = translated;
         }
-
-        // 4. PHOTO EDITOR
-        let uploadedImage = document.getElementById("uploadedImage");
-        let downloadBtn = document.getElementById("downloadBtn");
+        let uploadedImage = document.getElementById("uploadedImage"); let downloadBtn = document.getElementById("downloadBtn");
         document.getElementById("imageUpload").addEventListener("change", function(e){
-            let file = e.target.files[0];
-            if(file){
+            let file = e.target.files[0]; if(file){
                 let reader = new FileReader();
                 reader.onload = function(event){
-                    uploadedImage.src = event.target.result;
-                    uploadedImage.style.display = "block";
-                    uploadedImage.style.filter = "none";
-                    downloadBtn.style.display = "inline-block";
-                    downloadBtn.href = event.target.result;
+                    uploadedImage.src = event.target.result; uploadedImage.style.display = "block"; uploadedImage.style.filter = "none";
+                    downloadBtn.style.display = "inline-block"; downloadBtn.href = event.target.result;
                 }
                 reader.readAsDataURL(file);
             }
         });
         function applyFilter(filter){
-            uploadedImage.style.filter = filter;
-            let canvas = document.createElement('canvas');
-            let ctx = canvas.getContext('2d');
-            canvas.width = uploadedImage.naturalWidth;
-            canvas.height = uploadedImage.naturalHeight;
-            ctx.filter = filter;
-            ctx.drawImage(uploadedImage, 0, 0);
+            uploadedImage.style.filter = filter; let canvas = document.createElement('canvas'); let ctx = canvas.getContext('2d');
+            canvas.width = uploadedImage.naturalWidth; canvas.height = uploadedImage.naturalHeight; ctx.filter = filter; ctx.drawImage(uploadedImage, 0, 0);
             downloadBtn.href = canvas.toDataURL();
         }
-
-        // 5. PASSWORD GENERATOR
         function generatePassword(){
-            let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
-            let pass = "";
-            for(let i=0; i<12; i++){
-                pass += chars.charAt(Math.floor(Math.random() * chars.length));
-            }
+            let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*"; let pass = "";
+            for(let i=0; i<12; i++){ pass += chars.charAt(Math.floor(Math.random() * chars.length)); }
             document.getElementById("generatedPass").innerText = pass;
         }
-
-        // 6. BMI CALCULATOR
         function calculateBMI(){
-            let w = parseFloat(document.getElementById("weight").value);
-            let h = parseFloat(document.getElementById("height").value) / 100;
-            if(w>0 && h>0){
-                let bmi = (w / (h*h)).toFixed(2);
-                document.getElementById("bmiResult").innerText = "Apka BMI: " + bmi;
-            }
+            let w = parseFloat(document.getElementById("weight").value); let h = parseFloat(document.getElementById("height").value) / 100;
+            if(w>0 && h>0){ let bmi = (w / (h*h)).toFixed(2); document.getElementById("bmiResult").innerText = "Your BMI: " + bmi; }
         }
-
-        // 7. NOTES APP
-        function saveNotes(){
-            let notes = document.getElementById("notes").value;
-            localStorage.setItem("dailykaam_notes", notes);
-            alert("Notes Save ho gaye!");
-        }
-        function loadNotes(){
-            let notes = localStorage.getItem("dailykaam_notes");
-            document.getElementById("notes").value = notes;
-        }
-
-        // 8. CURRENCY CONVERTER
-        function convertCurrency(){
-            let usd = parseFloat(document.getElementById("usdAmount").value);
-            let rate = 280; // Approx rate
-            if(usd > 0){
-                let pkr = (usd * rate).toFixed(2);
-                document.getElementById("currencyResult").innerText = usd + " USD = " + pkr + " PKR";
-            }
-        }
-
-        // 9. QR CODE GENERATOR
-        function generateQR(){
-            let text = document.getElementById("qrInput").value;
-            if(text === "") return;
-            let qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(text);
-            document.getElementById("qrResult").innerHTML = '<img src="'+qrUrl+'"><br>QR Code Ready!';
-        }
-
-        // 10. AGE CALCULATOR
-        function calculateAge(){
-            let dob = new Date(document.getElementById("dob").value);
-            let today = new Date();
-            if(dob){
-                let age = today.getFullYear() - dob.getFullYear();
-                let m = today.getMonth() - dob.getMonth();
-                if(m < 0 || (m === 0 && today.getDate() < dob.getDate())) age--;
-                document.getElementById("ageResult").innerText = "Apki Age: " + age + " Saal";
-            }
-        }
+        function saveNotes(){ let notes = document.getElementById("notes").value; localStorage.setItem("dailykaam_notes", notes); alert("Notes Saved!"); }
+        function loadNotes(){ let notes = localStorage.getItem("dailykaam_notes"); document.getElementById("notes").value = notes; }
+        function convertCurrency(){ let usd = parseFloat(document.getElementById("usdAmount").value); let rate = 280; if(usd > 0){ let pkr = (usd * rate).toFixed(2); document.getElementById("currencyResult").innerText = usd + " USD = " + pkr + " PKR"; } }
+        function generateQR(){ let text = document.getElementById("qrInput").value; if(text === "") return; let qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(text); document.getElementById("qrResult").innerHTML = '<img src="'+qrUrl+'"><br>QR Code Ready!'; }
+        function calculateAge(){ let dob = new Date(document.getElementById("dob").value); let today = new Date(); if(dob){ let age = today.getFullYear() - dob.getFullYear(); let m = today.getMonth() - dob.getMonth(); if(m < 0 || (m === 0 && today.getDate() < dob.getDate())) age--; document.getElementById("ageResult").innerText = "Your Age: " + age + " Years"; } }
     </script>
 </body>
 </html>
