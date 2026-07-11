@@ -73,3 +73,19 @@ function minus(){
     document.getElementById("result").innerText = "Jawab: " + (n1 - n2);
 }
 </script>
+// TRANSLATOR SCRIPT
+async function translateText(){
+    let text = document.getElementById("translateInput").value;
+    if(text === "") return;
+    
+    document.getElementById("translateResult").innerText = "Translating...";
+    
+    // Free Google Translate API
+    let url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=" + encodeURI(text);
+    
+    let response = await fetch(url);
+    let data = await response.json();
+    
+    let translated = data[0].map(item => item[0]).join("");
+    document.getElementById("translateResult").innerText = translated;
+}
